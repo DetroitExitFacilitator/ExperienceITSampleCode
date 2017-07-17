@@ -27,13 +27,13 @@ namespace Inheritance_FatherSon
             //Now the father 
             father.TellJoke();
             father.TellDadJoke();
-            father.PlayInstrument();
+            father.FixC3P0();
 
             Console.WriteLine($"That's a tough act to follow, {son.FirstName}, but go ahead and show us what you got\n");
 
             son.TellJoke();
-            son.Dance();
-            son.PlayInstrument();
+            son.FixR2D2();
+            son.FixC3P0();
             //The method the Son created to "steal credit for" the dad joke
             son.ActLikeAmySchumer();
             //The method TellDadJoke is still available to this instance of the son, even without having to be wrapped inside another method
