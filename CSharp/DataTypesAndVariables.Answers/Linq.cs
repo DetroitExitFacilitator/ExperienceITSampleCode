@@ -12,22 +12,20 @@ namespace DataTypesAndVariables.Answers
             var list = new List<string> { "Aang", "Megaman", "Homer", "Rick", "Summer", "Bob", "Louise", "Archer", "Stan", "Rodger", "Sozin" };
 
             //where
-            //Write a program that uses the linq method Where to find all the names that start with S and print the names
+            //Write a program that uses the linq method Where to find all the names that start with capital S and print the names
             var namesThatStartWithS = list.Where(n => n.StartsWith("S")); //or n[0] == 'S'
             foreach (var name in namesThatStartWithS)
             {
                 Console.WriteLine($"{name} ");
             }
-            //Write a program that uses the linq method Where to find all names that contain the letter W (not case sensitive) and print the number of names
-            var namesThatContainW = list.Where(n => n.Contains('w') || n.Contains('W'));
-            foreach (var name in namesThatContainW)
-            {
-                Console.WriteLine($"{name} ");
-            }
+            //Write a program that uses the linq method Where to find all names that contain the letter 'w' lowercase and print the number of names
+            var namesThatContainW = list.Where(n => n.Contains('w'));
+            Console.WriteLine($"Names that contain the letter 'w': {namesThatContainW.Count()}");
+            
 
             //first
-            //Write a program that uses the linq method First to print the first name that has the letter c (not case sensitive) in it
-            var firstNameWithC = list.First(n => n.Contains('c') || n.Contains('C'));
+            //Write a program that uses the linq method First to print the first name that has the letter 'c' lowercase in it
+            var firstNameWithC = list.First(n => n.Contains('c'));
             Console.WriteLine($"First name that contains the letter 'c' is: {firstNameWithC}");
 
             //Write a program that uses the linq method First to print the first name that has 15 letters in it
@@ -40,17 +38,17 @@ namespace DataTypesAndVariables.Answers
             Console.WriteLine($"Name with 15 letters or more: {firstOrDefaultNameWith15Letters}");
 
             //single
-            //Write a program that uses the linq method Single to print the name that contains the letter z (not case sensitive)
-            var onlyNameWithZ = list.Single(n => n.Contains('z') || n.Contains('Z'));
+            //Write a program that uses the linq method Single to print the name that contains the letter 'z' lowercase
+            var onlyNameWithZ = list.Single(n => n.Contains('z'));
             Console.WriteLine($"The only name with the letter z is: {onlyNameWithZ}");
 
-            //Write a program that uses the linq method Single to print the name that contains the letter s (not case sensitive)
+            //Write a program that uses the linq method Single to print the name that contains the letter 's' lowercase
 
             //This will throw an exception
-            //var errorOnlyNameWithS = list.Single(n => n.Contains('s') || n.Contains('S'));
+            //var errorOnlyNameWithS = list.Single(n => n.Contains('s'));
 
-            //Write a program that uses the linq method SingleOrDefault to print the name that contains the letter s (not case sensitive)
-            var onlyNameWithS = list.SingleOrDefault(n => n.Contains('s') || n.Contains('S'));
+            //Write a program that uses the linq method SingleOrDefault to print the name that contains the letter 's' lowercase
+            var onlyNameWithS = list.SingleOrDefault(n => n.Contains('s'));
             Console.WriteLine($"The only name that contains the letter 's': {onlyNameWithS}");
 
 
