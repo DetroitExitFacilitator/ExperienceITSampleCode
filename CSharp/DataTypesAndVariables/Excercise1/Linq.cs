@@ -11,17 +11,17 @@ namespace DataTypesAndVariables.Excercise1
 
             //where
             //Write a program that uses the linq method Where to find all the names that start with S and print the names
-            //Write a program that uses the linq method Where to find all names that contain the letter W (not case sensitive) and print the number of names
+            //Write a program that uses the linq method Where to find all names that contain the letter 'w' (lowercase) and print the number of names
 
             //first
-            //Write a program that uses the linq method First to print the first name that has the letter c (not case sensitive) in it
+            //Write a program that uses the linq method First to print the first name that has the letter 'c' lowercase in it
             //Write a program that uses the linq method First to print the first name that has 15 letters in it
             //Write a program that uses the linq method FirstOrDefault to print the first name that has 15 letters in it
 
             //single
-            //Write a program that uses the linq method Single to print the name that contains the letter z (not case sensitive)
-            //Write a program that uses the linq method Single to print the name that contains the letter s (not case sensitive)
-            //Write a program that uses the linq method SingleOrDefault to print the name that contains the letter s (not case sensitive)
+            //Write a program that uses the linq method Single to print the name that contains the letter 'z' lowercase
+            //Write a program that uses the linq method Single to print the name that contains the letter 's' lowercase
+            //Write a program that uses the linq method SingleOrDefault to print the name that contains the letter 's' lowercase
 
 
             var classRoom = LoadClassroom();
