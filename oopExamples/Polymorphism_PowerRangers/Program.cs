@@ -12,6 +12,9 @@ namespace Polymorphism_PowerRangers
 
         public static void ItsMorphinTime()
         {
+            //Here we create a List of IRanger objects that allows us to create Green/Red/Pink Ranger instances
+            //because they all implement the same interface. For polymorphism, we can also use a class to operate with
+            //polymorphically. It doesn't have to be an interface
             List<IRanger> rangers = new List<IRanger>
             {
                 new GreenRanger("Green Ranger"),
@@ -27,6 +30,8 @@ namespace Polymorphism_PowerRangers
 
             Console.WriteLine();
 
+            //Now that we want to operate on the rangers polymorphically to YellName's,
+            //we can do that because they are all using the same interface that defines YellName is required
             foreach (var ranger in rangers)
             {
                 ranger.YellName();
@@ -38,6 +43,9 @@ namespace Polymorphism_PowerRangers
 
             Console.WriteLine();
 
+
+            //Same thing here, because IRanger defines that Morph is part of the contract, we can
+            //loop over all the Rangers to invoke their Morph method
             foreach (var ranger in rangers)
             {
                 ranger.Morph();

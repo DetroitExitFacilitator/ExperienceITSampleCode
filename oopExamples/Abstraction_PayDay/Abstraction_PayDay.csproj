@@ -42,14 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommissionedTeamMember.cs" />
-    <Compile Include="HourlyTeamMember.cs" />
-    <Compile Include="ICalculate.cs" />
-    <Compile Include="IPayable.cs" />
-    <Compile Include="PaycheckCalculator.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Answer\CommissionedTeamMember.cs" />
+    <Compile Include="Answer\HourlyTeamMember.cs" />
+    <Compile Include="Answer\ICalculatePay.cs" />
+    <Compile Include="Answer\IAmPayable.cs" />
+    <Compile Include="Answer\PaycheckCalculator.cs" />
+    <Compile Include="Problem.cs" />
+    <Compile Include="Answer\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalaryTeamMember.cs" />
+    <Compile Include="Answer\SalaryTeamMember.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

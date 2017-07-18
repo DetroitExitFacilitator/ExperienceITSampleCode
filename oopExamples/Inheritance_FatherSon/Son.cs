@@ -21,7 +21,7 @@ namespace Inheritance_FatherSon
             Console.WriteLine($"{FirstName}: When bald people wash their face, how high up do they go?");
         }
 
-        public void ActLikeAmySchumer()
+        public void StealDadJoke()
         {
             TellDadJoke();
             Console.WriteLine("I totally just thought of that joke on my own right now and didn't steal it from anyone else...");

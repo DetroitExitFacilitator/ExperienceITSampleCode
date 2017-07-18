@@ -42,13 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Apple.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Broom.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Answer\Apple.cs" />
+    <Compile Include="Answer\Item.cs" />
+    <Compile Include="Answer\Broom.cs" />
+    <Compile Include="Problem.cs" />
+    <Compile Include="Answer\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShoppingCart.cs" />
-    <Compile Include="Steak.cs" />
+    <Compile Include="Answer\ShoppingCart.cs" />
+    <Compile Include="Answer\Steak.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
