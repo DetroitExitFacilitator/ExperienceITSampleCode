@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypesAndVariables", "Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypesAndVariables.Answers", "DataTypesAndVariables.Answers\DataTypesAndVariables.Answers.csproj", "{3ACC2495-5AF4-4EF7-91C4-61619802F633}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessModifiers", "AccessModifiers\AccessModifiers.csproj", "{2A7F8509-734B-42DB-9F3E-DEBE1A282534}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3ACC2495-5AF4-4EF7-91C4-61619802F633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ACC2495-5AF4-4EF7-91C4-61619802F633}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ACC2495-5AF4-4EF7-91C4-61619802F633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7F8509-734B-42DB-9F3E-DEBE1A282534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7F8509-734B-42DB-9F3E-DEBE1A282534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7F8509-734B-42DB-9F3E-DEBE1A282534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7F8509-734B-42DB-9F3E-DEBE1A282534}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
