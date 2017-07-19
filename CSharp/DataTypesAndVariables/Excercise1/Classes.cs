@@ -1,4 +1,6 @@
-﻿namespace DataTypesAndVariables.Excercise1
+using System.Collections.Generic;
+using System;
+namespace DataTypesAndVariables.Excercise1
 {
     public class Classes
     {
