@@ -9,6 +9,7 @@ namespace DataTypesAndVariables.Excercise1
         public static void Main(string[] args)
         {
             //use this list for the linq examples (except for Select and SelectMany, that will use a different list)
+            // Note that we added using System.Linq at the top. The System.Linq namespace provides classes and interfaces that support queries that use Language-Integrated Query (LINQ
             var list = new List<string> { "Aang", "Megaman", "Homer", "Rick", "Summer", "Bob", "Louise", "Archer", "Stan", "Rodger", "Sozin" };
 
             //where
