@@ -1,4 +1,4 @@
-﻿namespace DataTypesAndVariables.Answers
+﻿namespace AccessModifiers.Answers
 {
     public class AccessModifiersAnswers
     {
@@ -28,7 +28,6 @@
 
         //}
     }
-
     public class Human
     {
         public string Name { get; set; }
@@ -38,7 +37,5 @@
         protected int BankAccountNumber { get; set; }
 
         internal string SocialSecurityNumber { get; set; }
-    }
-}
     }
 }
