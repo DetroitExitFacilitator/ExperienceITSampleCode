@@ -9,6 +9,7 @@ using System.Web.Http;
 using WebApiProject.Models;
 using WebApiProject.Models.Requests;
 using System.Web.Http.Cors;
+using System.Configuration;
 
 namespace WebApiProject.Controllers
 {
@@ -20,9 +21,9 @@ namespace WebApiProject.Controllers
             return Get(location.query);
         }
 
-        private const string _connectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=ExperienceITDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;";
         private static List<Result> Reader(string search)
         {
+            string _connectionString = ConfigurationManager.ConnectionStrings["ExperienceITDatabaseConnectionString"].ConnectionString;
             var results = new List<Result>();
 
             string commandText = "SELECT * FROM ResultsTable";
