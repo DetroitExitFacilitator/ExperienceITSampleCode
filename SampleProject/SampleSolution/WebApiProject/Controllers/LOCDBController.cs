@@ -9,19 +9,7 @@ using System.Web.Http;
 using WebApiProject.Models;
 using WebApiProject.Models.Requests;
 using System.Web.Http.Cors;
-
-
-/*
- * Status:  
- * Add an WebAPI with a similiar endpoint.  
- * Update html code to call this endpoint.
- * Need to be able to bring up test page in 'Website' project (CORS issues).
- * 
- * Routing:
- * https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
- * 
- * https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/enabling-cross-origin-requests-in-web-api
- //* */
+using System.Configuration;
 
 namespace WebApiProject.Controllers
 {
@@ -33,9 +21,9 @@ namespace WebApiProject.Controllers
             return Get(location.query);
         }
 
-        private const string _connectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=ExperienceITDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;";
         private static List<Result> Reader(string search)
         {
+            string _connectionString = ConfigurationManager.ConnectionStrings["ExperienceITDatabaseConnectionString"].ConnectionString;
             var results = new List<Result>();
 
             string commandText = "SELECT * FROM ResultsTable";
