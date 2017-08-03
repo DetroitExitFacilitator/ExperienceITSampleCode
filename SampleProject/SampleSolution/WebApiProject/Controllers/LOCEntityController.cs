@@ -8,17 +8,6 @@ using WebApiProject.Models;
 using WebApiProject.Models.Requests;
 using System.Web.Http.Cors;
 
-/*
- * Status:  
- * Add an WebAPI with a similiar endpoint.  
- * Update html code to call this endpoint.
- * Need to be able to bring up test page in 'Website' project (CORS issues).
- * 
- * Routing:
- * https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
- * 
- * https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/enabling-cross-origin-requests-in-web-api
- //* */
 using WebApplication1.DBContext;
 
 namespace WebApiProject.Controllers
