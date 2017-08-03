@@ -10,11 +10,9 @@ using System.Web.Http.Cors;
 
 namespace WebApiProject.Controllers
 {
-    // [EnableCors(origins: "*", headers: "*", methods: "*")]
+    /* Step: This class is used to define what happens when the '/loc' endpoint is called*/
     public class LOCController : ApiController
     {
-
-        /* Step: */
         /* Step: Need to create  object LOCRequest, as well as:
          LOCData, Result, Image, and Links*/
         [HttpGet]
