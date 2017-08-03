@@ -1,0 +1,64 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <title>Library of Congress</title>
+</head>
+<body>
+    <!-- TODO:  Add  -->
+    <h2>Library of Congress - Image Search</h2>
+
+    <input id="searchText" type="text" size="100" value="Migrant Mother. Dorothea Lange" />
+    <br />(Also Try "Detroit Campus Martius")
+    <br /><button onclick="loadRemoteLOC()">Search Remote</button>
+
+    <table border="1" id="resultsTable">
+        <tr>
+            <th>date</th>
+            <th>title</th>
+            <th>thumb</th>
+        </tr>
+    </table>
+
+    <script>
+        function addRowToTable(item) {
+            var row = $("<tr />")
+            $("#resultsTable").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
+            row.append($("<td>" + item.created_published_date + "</td>"));
+            row.append($("<td>" + "<a target='_blank' href='" + item.links.item + "'>" + item.title + "</a>" + "</td>"));
+            row.append($("<td>" + "<a target='_blank' href='" + item.links.resource + "'>" + '<img src="' + item.image.square + '" />' + "</a>" + "</td>"));
+        }
+
+        function loadData(data) {
+            $("#resultsTable tr:gt(0)").remove();
+            //alert("AAAA" + JSON.stringify(data, null, "  "))
+            var list = data.results;
+            for (var i = 0; i < list.length; i++) {
+                var item = list[i];
+                addRowToTable(item);
+            }
+        }
+        loadRemoteLOC();
+
+        function loadRemoteLOC() {
+            var search = $("#searchText").val();
+            $.ajax({
+                type: 'get',
+                url: 'http://www.loc.gov/pictures/search/',
+                dataType: 'jsonp',
+                data: {
+                    fo: 'json',
+                    at: 'results',
+                    query: search
+                },
+                success: function (response) {
+                    loadData(response);
+                },
+                error: function (errorObject) {
+                    alert("error: " + errorObject.responseText)
+                }
+            })
+        }
+    </script>
+</body>
+</html>
