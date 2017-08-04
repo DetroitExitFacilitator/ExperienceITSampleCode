@@ -12,6 +12,9 @@ using System.Web;
 
 namespace WebApiProject.Controllers
 {
+    /* Step: This class is used to define what happens when the '/AWEntity' endpoint is called.  
+     * In this case, it queries the "AdventureWorks" database, and gets all the results from a table. 
+     * */
     public class AWEntityController : ApiController
     {
         [HttpGet]
@@ -20,7 +23,11 @@ namespace WebApiProject.Controllers
             return Get(location.query);
         }
 
+        // Step: Get the entity
         protected readonly AdventureWorksEntities AdventureWorksDB = new AdventureWorksEntities();
+
+
+        // Step: Returns the LOCData, based on iterating the results from the Products object */
         private LOCData Get(string search)
         {
             var request = HttpContext.Current.Request;

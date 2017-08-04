@@ -1,10 +1,37 @@
-﻿
+﻿<!-- Overview: Adding CSS,
+    For more info see:
+        https://www.w3schools.com/html/html_css.asp
+    -->
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Image Search</title>
+    <!-- Step:  Add a title, in this case, call it "Adding CSS" -->
+    <title>Adding CSS</title>
+
+    <!-- Step: Add an css section to the this file -->
+    <!-- NOTE: Typically, CSS files are not in the same file as html, but in an external file. -->
+    <style>
+        /* Step: Add a body tag, and give it the color "powderblue"*/
+        body {
+            background-color: powderblue;
+        }
+        /* Step: Make the table heading blue */
+        /* Step: Make the font large */
+        /* Step: Add padding, .... */
+
+        th {
+            color: blue;
+            font-family: courier;
+            font-size: 160%;
+            padding: 30px;
+        }
+
+        td.lastLine {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <!-- TODO:  Add Css -->
     <input id="searchText" type="text" width="900" value="" />
 
     <table border="1" id="resultsTable">
@@ -12,6 +39,18 @@
             <th>date</th>
             <th>title</th>
             <th>thumb</th>
+        </tr>
+        <!-- Step:  Make the middle row have a background of aqua, using inline styles -->
+        <!-- Step:  Use the class attribute, call it lastLine, make it red -->
+        <tr>
+            <td>1</td>
+            <td style="background-color:aqua">2</td>
+            <td class="lastLine">3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td style="background-color:aqua">5</td>
+            <td class="lastLine">6</td>
         </tr>
     </table>
 </body>
