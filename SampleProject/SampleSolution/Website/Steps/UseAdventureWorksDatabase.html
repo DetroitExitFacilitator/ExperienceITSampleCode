@@ -1,15 +1,17 @@
-﻿
+﻿<!-- Overview:  Calling a custom endpoint we create, that returns data from the AdventureWorks database, using Entity.
+    -->
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
-    <title>Library of Congress</title>
+    <!-- Step:  Add a title, in this case, call it "Uses AdventureWorks" -->
+   <title>Uses AdventureWorks</title>
 </head>
 <body>
-    <!-- TODO:  Add  -->
-    <h2>Use database entity</h2>
-
+    <!-- Step:  Default value of "Road" -->
     <input id="searchText" type="text" size="100" value="Road" />
-    <br /><button onclick="loadAWDatabaseUsingEntity()">Search Database</button>
+    <!-- Step: tie into the onclick event, and call the function "loadAWDatabaseUsingEntity" -->
+   <br /><button onclick="loadAWDatabaseUsingEntity()">Search Database</button>
 
     <table border="1" id="resultsTable">
         <tr>
@@ -37,12 +39,13 @@
                 addRowToTable(item);
             }
         }
+        /* Step: Call the loadAWDatabaseUsingEntity function (in order to initialize when the page loads)  */
         loadAWDatabaseUsingEntity();
 
         function loadAWDatabaseUsingEntity() {
-            // alert('click' + $("#searchText").val())
             var search = $("#searchText").val();
-            $.ajax({
+             /*  Step: Using JQuery ajax, call the url  'http://localhost:29594/api/AWEntity/' */
+           $.ajax({
                 type: 'get',
                 url: 'http://localhost:29594/api/AWEntity/',
                 dataType: 'json',
