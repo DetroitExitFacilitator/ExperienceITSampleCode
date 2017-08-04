@@ -23,11 +23,11 @@ namespace WebApiProject.Controllers
             return Get(location.query);
         }
 
-        /* Step: Get the entity */
+        // Step: Get the entity
         protected readonly AdventureWorksEntities AdventureWorksDB = new AdventureWorksEntities();
 
 
-        /* Step: Returns the LOCData, based on iterating the results from the Products object */
+        // Step: Returns the LOCData, based on iterating the results from the Products object */
         private LOCData Get(string search)
         {
             var request = HttpContext.Current.Request;

@@ -24,28 +24,28 @@ namespace WebApiProject.Controllers
             return Get(location.query);
         }
 
-        /* Step: Return a list of Results, from the "ResultsTable" SQL table. */
+        // Step: Return a list of Results, from the "ResultsTable" SQL table.
         private static List<Result> Reader(string search)
         {
-            /* Step: return the connection string define in the web.config file, under "ExperienceITDatabaseConnectionString"*/
+            // Step: return the connection string define in the web.config file, under "ExperienceITDatabaseConnectionString"
             string _connectionString = ConfigurationManager.ConnectionStrings["ExperienceITDatabaseConnectionString"].ConnectionString;
             var results = new List<Result>();
 
-            /* Step: Specify the SQL statement to use.  Get all data from the "ResultsTable" */
+            // Step: Specify the SQL statement to use.  Get all data from the "ResultsTable" 
             string commandText = "SELECT * FROM ResultsTable";
 
-            /* Step: Create a connection object. */
+            // Step: Create a connection object. */
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                /* Step: Create a command object that uses the connection and the commandText */
+                // Step: Create a command object that uses the connection and the commandText 
                 using (SqlCommand command = new SqlCommand(commandText, connection))
                 {
-                    /* Step: Open a connection*/
+                    // Step: Open a connection
                     connection.Open();
-                    /* Step: Read the data. */
+                    // Step: Read the data.
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        /* Step: Read one row at a time, from the table. */
+                        // Step: Read one row at a time, from the table.
                         while (reader.Read())
                         {
                             var id = (int)reader["id"];

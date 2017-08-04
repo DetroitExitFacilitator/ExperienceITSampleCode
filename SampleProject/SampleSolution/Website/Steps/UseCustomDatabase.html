@@ -39,12 +39,12 @@
                 addRowToTable(item);
             }
         }
-        /* Step: Call the loadDatabaseData function (in order to initialize when the page loads)  */
+        // Step: Call the loadDatabaseData function (in order to initialize when the page loads)
         loadDatabaseData();
 
         function loadDatabaseData() {
             var search = $("#searchText").val();
-            /*  Step: Using JQuery ajax, call the url  'http://localhost:29594/api/locdb/' */
+            /*  Step: Using JQuery ajax, call the url  'http://localhost:29594/api/locdb/'
             $.ajax({
                 type: 'get',
                 url: 'http://localhost:29594/api/locdb/',

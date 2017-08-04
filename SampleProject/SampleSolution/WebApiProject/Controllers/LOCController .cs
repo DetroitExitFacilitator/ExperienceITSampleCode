@@ -19,29 +19,29 @@ namespace WebApiProject.Controllers
         public LOCData GetFromQueryString([FromUri] LOCRequest location)
         {
             var search = location.query;
-            /* Step: Return the LOCData object, with sample data*/
+            // Step: Return the LOCData object, with sample data 
             var data = new LOCData();
             data.results = new List<Result>
             {
-          /* Step: Return the Result object, with sample data*/
+          // Step: Return the Result object, with sample data 
                new Result()
                 {
                     title = "SAMPLE: Michigan, Detroit, Campus Martius",
                     createdOn = "[between 1920 and 1940]",
-         /* Step: Return the Image object, with sample data*/
+         // Step: Return the Image object, with sample data 
                    image = new Image()
                     {
                         full ="//www.loc.gov/pictures/cdn/service/pnp/cph/3c20000/3c23000/3c23000/3c23096_150px.jpg",
                         square ="https://dummyimage.com/75x75/cccccc/000000.jpg&text=gsdfgdfsdf+dsaf+"
                     },
-          /* Step: Return the Links object, with sample data*/
+          // Step: Return the Links object, with sample data 
                    links = new Links()
                     {
                         item ="//www.loc.gov/pictures/item/99403554/",
                         resource ="//www.loc.gov/pictures/item/99403554/resource/"
                     }
                 },
-           /* Step: Create a second Result object. */
+           // Step: Create a second Result object.  
               new Result()
                 {
                     title = "SAMPLE: [Shubert's Detroit Opera House, Campus Martins, Detroit, Michigan]",

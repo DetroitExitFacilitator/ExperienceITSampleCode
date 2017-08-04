@@ -23,10 +23,10 @@ namespace WebApiProject.Controllers
             //return GetV1(location.query);
             return Get(location.query);
         }
-        /* Step: Get the entity */
+        // Step: Get the entity
         protected readonly ExperienceITDatabaseEntities ExperienceITDB = new ExperienceITDatabaseEntities();
 
-        /* Step: Returns the LOCData, based on iterating the results from the ResultsTables */
+        // Step: Returns the LOCData, based on iterating the results from the ResultsTables
         private LOCData GetV1(string search)
         {
             var resultsTable = ExperienceITDB.ResultsTables.AsEnumerable();
@@ -54,7 +54,7 @@ namespace WebApiProject.Controllers
             data.results = results;
             return data;
         }
-        /* Step: Returns the LOCData, based on using LINQ */
+        // Step: Returns the LOCData, based on using LINQ
         private LOCData Get(string search)
         {
             var resultsTable = ExperienceITDB.ResultsTables.AsEnumerable();
