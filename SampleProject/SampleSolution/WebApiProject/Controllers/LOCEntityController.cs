@@ -12,16 +12,21 @@ using WebApplication1.DBContext;
 
 namespace WebApiProject.Controllers
 {
+    /* Step: This class is used to define what happens when the '/locEntity' endpoint is called.  
+     * In this case, it queries the "ExperienceIT" database, and gets all the results from a table. 
+     * It uses Entity to get the data from the database to the internal objects. */
     public class LOCEntityController : ApiController
     {
         [HttpGet]
         public LOCData GetFromQueryString([FromUri] LOCRequest location)
         {
+            //return GetV1(location.query);
             return Get(location.query);
         }
 
         protected readonly ExperienceITDatabaseEntities ExperienceITDB = new ExperienceITDatabaseEntities();
-        // GET api/loc
+
+        /* Step: Returns the LOCData, based on iterating the results form the ResultsTable */
         private LOCData GetV1(string search)
         {
             var resultsTable = ExperienceITDB.ResultsTables.AsEnumerable();
@@ -49,6 +54,7 @@ namespace WebApiProject.Controllers
             data.results = results;
             return data;
         }
+        /* Step: Returns the LOCData, based on using LINQ */
         private LOCData Get(string search)
         {
             var resultsTable = ExperienceITDB.ResultsTables.AsEnumerable();

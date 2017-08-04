@@ -1,14 +1,15 @@
-﻿
+﻿<!-- Overview:  Calling a custom endpoint we create, that returns data from the database, using Entity.
+    -->
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
     <title>Library of Congress</title>
 </head>
 <body>
-    <!-- TODO:  Add  -->
-    <h2>Use database entity</h2>
 
     <input id="searchText" type="text" size="100" value="lam" />
+    <!-- Step: tie into the onclick event, and call the function "loadDatabaseUsingEntity" -->
     <br /><button onclick="loadDatabaseUsingEntity()">Search Database</button>
 
     <table border="1" id="resultsTable">
@@ -37,10 +38,12 @@
                 addRowToTable(item);
             }
         }
+        /* Step: Call the loadDatabaseUsingEntity function (in order to initialize when the page loads)  */
         loadDatabaseUsingEntity();
 
         function loadDatabaseUsingEntity() {
             var search = $("#searchText").val();
+            /*  Step: Using JQuery ajax, call the url  'http://localhost:29594/api/LOCEntity/' */
             $.ajax({
                 type: 'get',
                 url: 'http://localhost:29594/api/LOCEntity/',
