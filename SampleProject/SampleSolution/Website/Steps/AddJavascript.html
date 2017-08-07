@@ -6,7 +6,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <!-- Step:  Add a title, in this case, call it "Adding Javascript" -->
+    <!-- Step 3.00:  Add a title, in this case, call it "Adding Javascript" -->
     <title>Adding Javascript</title>
 </head>
 <body>
@@ -81,15 +81,16 @@
         };
     </script>
     <script>
-        // Step:  Call an alert function, and pass it "Hello World!".
+        // Step 3.10:  Call an alert function, and pass it "Hello World!".
         alert("Hello World!");
-        // Step: Display the count of the results subobject.
+
+        // Step 3.20: Display the count of the results subobject.
         alert("JSON Object Count = " + sampleData.results.length);
 
-        // Step: Display the title of the 2nd items title (index is 1).
+        // Step 3.30: Display the title of the 2nd items title (index is 1).
         alert("JSON first object info = " + sampleData.results[1].title);
 
-        // Step: Using JSON.stringify(OBJECT, null, "  "), dump out the  3rd JSON object . 
+        // Step 3.40: Using JSON.stringify(OBJECT, null, "  "), dump out the  3rd JSON object . 
         alert("full Object" + JSON.stringify(sampleData.results[2], null, "  "));
     </script>
 

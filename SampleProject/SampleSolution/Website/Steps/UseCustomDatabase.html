@@ -4,14 +4,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
-    <!-- Step:  Add a title, in this case, call it "Database Endpoint" -->
+    <!-- Step 7.10:  Add a title, in this case, call it "Database Endpoint" -->
     <title>Database Endpoint</title>
 </head>
 <body>
 
-    <!-- Step: Default value = "lam" -->
+    <!-- Step 7.20: Default value = "lam" -->
     <input id="searchText" type="text" size="100" value="lam" />
-    <!-- Step: tie into the onclick event, and call the function "loadDatabaseData" -->
+    <!-- Step 7.30: tie into the onclick event, and call the function "loadDatabaseData" -->
     <br /><button onclick="loadDatabaseData()">Search Database</button>
 
     <table border="1" id="resultsTable">
@@ -39,7 +39,7 @@
                 addRowToTable(item);
             }
         }
-        // Step: Call the loadDatabaseData function (in order to initialize when the page loads)
+        // Step 7.40: Call the loadDatabaseData function (in order to initialize when the page loads)
         loadDatabaseData();
 
         function loadDatabaseData() {

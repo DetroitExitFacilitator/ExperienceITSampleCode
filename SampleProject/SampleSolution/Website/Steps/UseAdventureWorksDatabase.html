@@ -4,13 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
-    <!-- Step:  Add a title, in this case, call it "Uses AdventureWorks" -->
+    <!-- Step 9.10:  Add a title, in this case, call it "Uses AdventureWorks" -->
    <title>Uses AdventureWorks</title>
 </head>
 <body>
-    <!-- Step:  Default value of "Road" -->
+    <!-- Step 9.20:  Default value of "Road" -->
     <input id="searchText" type="text" size="100" value="Road" />
-    <!-- Step: tie into the onclick event, and call the function "loadAWDatabaseUsingEntity" -->
+    <!-- Step 9.30: tie into the onclick event, and call the function "loadAWDatabaseUsingEntity" -->
    <br /><button onclick="loadAWDatabaseUsingEntity()">Search Database</button>
 
     <table border="1" id="resultsTable">
@@ -39,7 +39,7 @@
                 addRowToTable(item);
             }
         }
-        // Step: Call the loadAWDatabaseUsingEntity function (in order to initialize when the page loads)
+        // Step 9.40: Call the loadAWDatabaseUsingEntity function (in order to initialize when the page loads)
         loadAWDatabaseUsingEntity();
 
         function loadAWDatabaseUsingEntity() {

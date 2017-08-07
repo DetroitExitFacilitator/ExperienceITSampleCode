@@ -27,25 +27,25 @@ namespace WebApiProject.Controllers
         // Step: Return a list of Results, from the "ResultsTable" SQL table.
         private static List<Result> Reader(string search)
         {
-            // Step: return the connection string define in the web.config file, under "ExperienceITDatabaseConnectionString"
+            // Step 7.50: return the connection string define in the web.config file, under "ExperienceITDatabaseConnectionString"
             string _connectionString = ConfigurationManager.ConnectionStrings["ExperienceITDatabaseConnectionString"].ConnectionString;
             var results = new List<Result>();
 
-            // Step: Specify the SQL statement to use.  Get all data from the "ResultsTable" 
+            // Step 7.60: Specify the SQL statement to use.  Get all data from the "ResultsTable" 
             string commandText = "SELECT * FROM ResultsTable";
 
-            // Step: Create a connection object. */
+            // Step 7.70: Create a connection object. */
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                // Step: Create a command object that uses the connection and the commandText 
+                // Step 7.80: Create a command object that uses the connection and the commandText 
                 using (SqlCommand command = new SqlCommand(commandText, connection))
                 {
-                    // Step: Open a connection
+                    // Step 7.90: Open a connection
                     connection.Open();
-                    // Step: Read the data.
+                    // Step 7.100: Read the data.
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        // Step: Read one row at a time, from the table.
+                        // Step 7.110: Read one row at a time, from the table.
                         while (reader.Read())
                         {
                             var id = (int)reader["id"];
@@ -53,7 +53,7 @@ namespace WebApiProject.Controllers
                             var title = (string)reader["title"];
                             if (!title.Contains(search)) continue;
                             string createdOn = (string)reader["createDate"];
-                            // Step: Based on the returned data, create a Results object.
+                            // Step 7.120: Based on the returned data, create a Results object.
                             var result = new Result()
                             {
                                 id = id,
