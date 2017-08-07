@@ -12,7 +12,7 @@ using WebApplication1.DBContext;
 
 namespace WebApiProject.Controllers
 {
-    /* Step: This class is used to define what happens when the '/locEntity' endpoint is called.  
+    /* This class is used to define what happens when the '/locEntity' endpoint is called.  
      * In this case, it queries the "ExperienceIT" database, and gets all the results from a table. 
      * It uses Entity to get the data from the database to the internal objects. */
     public class LOCEntityController : ApiController
@@ -20,71 +20,21 @@ namespace WebApiProject.Controllers
         [HttpGet]
         public LOCData GetFromQueryString([FromUri] LOCRequest location)
         {
-            //return GetV1(location.query);
             return Get(location.query);
         }
-        // Step: Get the entity
-        protected readonly ExperienceITDatabaseEntities ExperienceITDB = new ExperienceITDatabaseEntities();
 
-        // Step: Returns the LOCData, based on iterating the results from the ResultsTables
-        private LOCData GetV1(string search)
-        {
-            var resultsTable = ExperienceITDB.ResultsTables.AsEnumerable();
-            var dbresults = resultsTable.Where(x => x.Title.Contains(search));
+        // Step 8.50: Get the entity
+        //Student: Insert Code Here.
 
-            var data = new LOCData();
-            var results = new List<Result>();
-            foreach (var dbItem in dbresults)
-            {
-                var item = new Result();
-                item.title = dbItem.Title;
-                item.createdOn = dbItem.CreateDate;
-                item.image = new Image()
-                {
-                    full = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=" + item.title,
-                    square = "https://dummyimage.com/75x75/cccccc/000000.jpg&text=" + item.title
-                };
-                item.links = new Links()
-                {
-                    item = "https://dummyimage.com/75x75/aaaaaa/000000.jpg&text=link:" + item.title,
-                    resource = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=link:" + item.title
-                };
-                results.Add(item);
-            }
-            data.results = results;
-            return data;
-        }
-        // Step: Returns the LOCData, based on using LINQ
+        // Step 8.60 Returns the LOCData, based on using LINQ
         private LOCData Get(string search)
         {
-            var resultsTable = ExperienceITDB.ResultsTables.AsEnumerable();
-            var dbresults = resultsTable.Where(x => x.Title.Contains(search));
-
-            using (var db = new ExperienceITDatabaseEntities())
-            {
-                var query = db.ResultsTables
-                        .Where(x => x.Title.Contains(search))
-                        .Select<ResultsTable, Result>
-                        (t => new Result
-                        {
-                            title = t.Title,
-                            createdOn = t.CreateDate,
-                            image = new Image()
-                            {
-                                full = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=" + t.Title,
-                                square = "https://dummyimage.com/75x75/cccccc/000000.jpg&text=" + t.Title
-                            },
-                            links = new Links()
-                            {
-                                item = "https://dummyimage.com/75x75/aaaaaa/000000.jpg&text=link:" + t.Title,
-                                resource = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=link:" + t.Title
-                            }
-                        });
-
-                var data = new LOCData() { results = query.ToList<Result>() };
-                return data;
-            }
+            //Student: InsertCode here and remove NotImplementedException
+            throw new NotImplementedException();
         }
+
+
+
         //// GET api/loc/5
         //[Route("api/locaaa/{search}")]
         //[HttpGet]

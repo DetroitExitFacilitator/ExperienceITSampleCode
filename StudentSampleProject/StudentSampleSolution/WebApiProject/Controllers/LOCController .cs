@@ -10,55 +10,44 @@ using System.Web.Http.Cors;
 
 namespace WebApiProject.Controllers
 {
-    /* Step: This class is used to define what happens when the '/loc' endpoint is called*/
+    /*This class is used to define what happens when the '/loc' endpoint is called*/
     public class LOCController : ApiController
     {
-        /* Step: Need to create  object LOCRequest, as well as:
+        /* Step 6.50: Need to create  object LOCRequest, as well as:
          LOCData, Result, Image, and Links*/
+
         [HttpGet]
         public LOCData GetFromQueryString([FromUri] LOCRequest location)
         {
             var search = location.query;
-            // Step: Return the LOCData object, with sample data 
+            // Step 6.60: Return the LOCData object, with sample data 
             var data = new LOCData();
             data.results = new List<Result>
             {
-          // Step: Return the Result object, with sample data 
+          // Step 6.70: Return the Result object, with sample data 
                new Result()
                 {
-                    title = "SAMPLE: Michigan, Detroit, Campus Martius",
-                    createdOn = "[between 1920 and 1940]",
-         // Step: Return the Image object, with sample data 
+          //Student: Insert your code here
+
+          // Step 6.80: Return the Image object, with sample data 
                    image = new Image()
                     {
-                        full ="//www.loc.gov/pictures/cdn/service/pnp/cph/3c20000/3c23000/3c23000/3c23096_150px.jpg",
-                        square ="https://dummyimage.com/75x75/cccccc/000000.jpg&text=gsdfgdfsdf+dsaf+"
+                       //Student: Insert your code here
                     },
-          // Step: Return the Links object, with sample data 
+          // Step 6.90: Return the Links object, with sample data 
                    links = new Links()
                     {
-                        item ="//www.loc.gov/pictures/item/99403554/",
-                        resource ="//www.loc.gov/pictures/item/99403554/resource/"
+                       //Student: Insert your code here
                     }
                 },
-           // Step: Create a second Result object.  
+           // Step 6.100: Create a second Result object.  
               new Result()
                 {
-                    title = "SAMPLE: [Shubert's Detroit Opera House, Campus Martins, Detroit, Michigan]",
-                    createdOn =  "1929.",
-                    image = new Image()
-                    {
-                        full ="//www.loc.gov/pictures/cdn/service/pnp/cph/3c30000/3c34000/3c34900/3c34960_150px.jpg",
-                        square = "//cdn.loc.gov/service/pnp/cph/3c30000/3c34000/3c34900/3c34960_75x75px.jpg",
-                    },
-                    links = new Links()
-                    {
-                        item = "//www.loc.gov/pictures/item/2004675446/",
-                        resource ="//www.loc.gov/pictures/item/2004675446/resource/"
-                    }
+                  //Student: Insert your code here
                 }
             };
-            return data;
+            //Student: return Data 
+            throw new NotImplementedException();
         }
 
         //// GET api/loc/5
