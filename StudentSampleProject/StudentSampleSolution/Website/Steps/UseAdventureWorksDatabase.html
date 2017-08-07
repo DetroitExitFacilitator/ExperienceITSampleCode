@@ -4,14 +4,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
-    <!-- Step:  Add a title, in this case, call it "Uses AdventureWorks" -->
-   <title>Uses AdventureWorks</title>
+    <!-- Step 9.10:  Add a title, in this case, call it "Uses AdventureWorks" -->
+    <!-- Student: Insert Code Here -->
 </head>
 <body>
-    <!-- Step:  Default value of "Road" -->
-    <input id="searchText" type="text" size="100" value="Road" />
-    <!-- Step: tie into the onclick event, and call the function "loadAWDatabaseUsingEntity" -->
-   <br /><button onclick="loadAWDatabaseUsingEntity()">Search Database</button>
+    <!-- Step 9.20:  Default value of "Road" -->
+    <!-- Student: Insert Code Here -->
+    <!-- Step 9.30: tie into the onclick event, and call the function "loadAWDatabaseUsingEntity" -->
+    <!-- Student: Insert Code Here -->
 
     <table border="1" id="resultsTable">
         <tr>
@@ -39,29 +39,8 @@
                 addRowToTable(item);
             }
         }
-        // Step: Call the loadAWDatabaseUsingEntity function (in order to initialize when the page loads)
-        loadAWDatabaseUsingEntity();
-
-        function loadAWDatabaseUsingEntity() {
-            var search = $("#searchText").val();
-             /*  Step: Using JQuery ajax, call the url  'http://localhost:29594/api/AWEntity/' */
-           $.ajax({
-                type: 'get',
-                url: 'http://localhost:29594/api/AWEntity/',
-                dataType: 'json',
-                data: {
-                    fo: 'json',
-                    at: 'results',
-                    query: search
-                },
-                success: function (response) {
-                    loadData(response);
-                },
-                error: function (errorObject) {
-                    alert("error: " + errorObject.responseText)
-                }
-            })
-        }
+        // Step 9.40: Call & Implement the loadAWDatabaseUsingEntity function (in order to initialize when the page loads)
+        // Student: Insert Code Here
 
     </script>
 </body>

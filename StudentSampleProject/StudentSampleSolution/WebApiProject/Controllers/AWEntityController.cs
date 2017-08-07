@@ -23,11 +23,11 @@ namespace WebApiProject.Controllers
             return Get(location.query);
         }
 
-        // Step 9990: Get the entity
+        // Step 9.50: Get the entity
         // protected readonly AdventureWorksEntities AdventureWorksDB = new AdventureWorksEntities();
 
 
-        // Step 10000: Returns the LOCData, based on iterating the results from the Products object */
+        // Step 9.60: Returns the LOCData, based on iterating the results from the Products object */
         private LOCData Get(string search)
         {
             //Student: Replace this Code to Query AdventureWorksDB and return LOCData
