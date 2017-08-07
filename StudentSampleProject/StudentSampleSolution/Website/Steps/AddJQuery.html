@@ -1,0 +1,124 @@
+﻿<!-- Overview: Adding JQuery,
+    For more info see:
+    -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Step: Add a script reference to "https://code.jquery.com/jquery-3.2.0.min.js" -->
+    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+
+    <!-- Step:  Add a title, in this case, call it "Adding JQuery" -->
+    <title>Adding JQuery</title>
+</head>
+<body>
+
+    <input id="searchText" type="text" size="100" value="-not used-" />
+    <br /><button onclick="testRemote()">Search Remote</button>
+
+
+    <!-- Step: Give the table the id  "resultsTable" -->
+    <table border="1" id="resultsTable">
+        <tr>
+            <th>date</th>
+            <th>title</th>
+            <th>thumb</th>
+        </tr>
+    </table>
+    <script>
+        /* NOTE: This defines a JSON object that we will use later on. */
+        var sampleData = {
+            "results": [
+                {
+                    "title": "0 SAMPLE: Michigan, Detroit, Campus Martius",
+                    "created_published_date": "[between 1920 and 1940]",
+                    "image": {
+                        "full": "//www.loc.gov/pictures/cdn/service/pnp/cph/3c20000/3c23000/3c23000/3c23096_150px.jpg",
+                        "square": "//cdn.loc.gov/service/pnp/cph/3c20000/3c23000/3c23000/3c23096_75x75px.jpg",
+                    },
+                    "links": {
+                        "item": "//www.loc.gov/pictures/item/99403554/",
+                        "resource": "//www.loc.gov/pictures/item/99403554/resource/"
+                    },
+                },
+                {
+                    "title": "1 SAMPLE: [Shubert's Detroit Opera House, Campus Martins, Detroit, Michigan]",
+                    "created_published_date": "1929.",
+                    "image": {
+                        "full": "//www.loc.gov/pictures/cdn/service/pnp/cph/3c30000/3c34000/3c34900/3c34960_150px.jpg",
+                        "square": "//cdn.loc.gov/service/pnp/cph/3c30000/3c34000/3c34900/3c34960_75x75px.jpg",
+                    },
+                    "links": {
+                        "item": "//www.loc.gov/pictures/item/2004675446/",
+                        "resource": "//www.loc.gov/pictures/item/2004675446/resource/"
+                    },
+                },
+                {
+                    "title": "2 SAMPLE: [Detroit, Mich., Campus Martius and Opera House]",
+                    "created_published_date": "[between 1900 and 1910]",
+                    "image": {
+                        "full": "//www.loc.gov/pictures/cdn/service/pnp/det/4a10000/4a18000/4a18900/4a18953r.jpg",
+                        "square": "//cdn.loc.gov/service/pnp/det/4a10000/4a18000/4a18900/4a18953_75x75px.jpg",
+                    },
+                    "links": {
+                        "item": "//www.loc.gov/pictures/item/det1994001536/PP/",
+                        "resource": "//www.loc.gov/pictures/item/det1994001536/PP/resource/"
+                    },
+                },
+                {
+                    "title": "3 SAMPLE: [Detroit, Mich., Campus Martius]",
+                    "created_published_date": "[between 1900 and 1920]",
+                    "image": {
+                        "full": "//www.loc.gov/pictures/cdn/service/pnp/det/4a20000/4a25000/4a25100/4a25139r.jpg",
+                        "square": "//cdn.loc.gov/service/pnp/det/4a20000/4a25000/4a25100/4a25139_75x75px.jpg",
+                    },
+                    "links": {
+                        "item": "//www.loc.gov/pictures/item/det1994002132/PP/",
+                        "resource": "//www.loc.gov/pictures/item/det1994002132/PP/resource/"
+                    },
+                },
+                {
+                    "title": "4 SAMPLE: The Campus, Detroit, Mich.",
+                    "created_published_date": "[between 1900 and 1910]",
+                    "image": {
+                        "full": "//www.loc.gov/pictures/cdn/service/pnp/det/4a10000/4a10000/4a10100/4a10101r.jpg",
+                        "square": "//cdn.loc.gov/service/pnp/det/4a10000/4a10000/4a10100/4a10101_75x75px.jpg",
+                    },
+                    "links": {
+                        "item": "//www.loc.gov/pictures/item/det1994008356/PP/",
+                        "resource": "//www.loc.gov/pictures/item/det1994008356/PP/resource/"
+                    },
+                },
+            ]
+        };
+    </script>
+
+    <script>
+        /* Step: create a function called addRowToTable, that takes an argument of one item from the results list, and adds a row to the table */
+        /* Step: using the selector resultsTable, add a 'tr' element, with 'td' elements inside of it */
+        function addRowToTable(item) {
+            var row = $("<tr />")
+            $("#resultsTable").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
+            /* Step: add */
+            row.append($("<td>" + item.created_published_date + "</td>"));
+            /* Step: Add a link that ties to the links.item, and has the title of item.title. */
+            row.append($("<td>" + "<a target='_blank' href='" + item.links.item + "'>" + item.title + "</a>" + "</td>"));
+            /* Step: Add another link, that ties to the  links.resource, and has the an image displayed.  Uses the image.square object. */
+            row.append($("<td>" + "<a target='_blank' href='" + item.links.resource + "'>" + '<img src="' + item.image.square + '" />' + "</a>" + "</td>"));
+        }
+
+        /* Step: Create a function loadData that takes 'data' as the input.  This will iterate through all the results data, and add rows to the table. */
+        function loadData(data) {
+            /* Step: Using JQuery, clear out all the tr tags.  [[this may be a bit advanced]]*/
+            $("#resultsTable tr:gt(0)").remove();
+            /* Step: iterate through all the items in the results list, and call addRowToTable for each item.  This will basically add one row of data at a time to the table.*/
+            var list = data.results;
+            for (var i = 0; i < list.length; i++) {
+                var item = list[i];
+                addRowToTable(item);
+            }
+        }
+        /* Step: Load the sample data*/
+        loadData(sampleData);
+    </script>
+</body>
+</html>
