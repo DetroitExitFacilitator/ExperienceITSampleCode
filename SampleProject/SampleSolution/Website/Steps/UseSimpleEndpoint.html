@@ -10,7 +10,6 @@
 <body>
 
     <input id="searchText" type="text" size="100" value="Migrant Mother. Dorothea Lange" />
-    <!-- Step 6.20: tie into the onclick event, and call the function "loadRemoteData" -->
     <br /><button onclick="loadRemoteData()">Search Remote</button>
 
     <table border="1" id="resultsTable">
@@ -38,10 +37,8 @@
                 addRowToTable(item);
             }
         }
-        // Step 6.30: Call the loadSimpleEndpoint function (in order to initialize when the page loads)
         loadRemoteData();
 
-        // Step 6.40: Define the loadSimpleEndpoint function that will pass the search information to an ajax call.  Upon returning, the loadData will be called with the returned data.
         function loadRemoteData() {
             var search = $("#searchText").val();
             /* Step 6.45: Using JQuery ajax, call the url  'http://localhost:29594/api/loc/' */

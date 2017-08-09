@@ -10,7 +10,6 @@
 <body>
 
     <input id="searchText" type="text" size="100" value="lam" />
-    <!-- Step 8.20: tie into the onclick event, and call the function "loadRemoteData" -->
     <br /><button onclick="loadRemoteData()">Search Database</button>
 
     <table border="1" id="resultsTable">
@@ -39,7 +38,6 @@
                 addRowToTable(item);
             }
         }
-        // Step 8.30: Call the loadRemoteData function (in order to initialize when the page loads)  */
         loadRemoteData();
 
         function loadRemoteData() {

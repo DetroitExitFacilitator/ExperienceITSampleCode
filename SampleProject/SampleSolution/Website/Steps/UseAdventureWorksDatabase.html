@@ -10,7 +10,6 @@
 <body>
     <!-- Step 9.20:  Default value of "Road" -->
     <input id="searchText" type="text" size="100" value="Road" />
-    <!-- Step 9.30: tie into the onclick event, and call the function "loadRemoteData" -->
     <br /><button onclick="loadRemoteData()">Search Database</button>
 
     <table border="1" id="resultsTable">
@@ -39,7 +38,6 @@
                 addRowToTable(item);
             }
         }
-        // Step 9.40: Call the loadRemoteData function (in order to initialize when the page loads)
         loadRemoteData();
 
         function loadRemoteData() {
