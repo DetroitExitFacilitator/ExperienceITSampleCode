@@ -44,7 +44,8 @@
 
         function loadDatabaseUsingEntity() {
             var search = $("#searchText").val();
-            /*  Step 8.40: Using JQuery ajax, call the url  'http://localhost:29594/api/LOCEntity/' */
+            /* Step 8.50: Using JQuery ajax, call the url  'http://localhost:29594/api/LOCEntity/' */
+            /* Step 8.51: In order for this to work, you will need to update the controller file: LOCEntityController.cs */
             $.ajax({
                 type: 'get',
                 url: 'http://localhost:29594/api/LOCEntity/',

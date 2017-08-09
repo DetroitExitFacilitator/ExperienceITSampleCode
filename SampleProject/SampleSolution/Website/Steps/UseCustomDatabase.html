@@ -44,7 +44,8 @@
 
         function loadDatabaseData() {
             var search = $("#searchText").val();
-            /*  Step: Using JQuery ajax, call the url  'http://localhost:29594/api/locdb/'
+            /* Step 7.50: Using JQuery ajax, call the url  'http://localhost:29594/api/locdb/' */
+            /* Step 7.51: In order for this to work, you will need to update the controller file: LOCDBController.cs */
             $.ajax({
                 type: 'get',
                 url: 'http://localhost:29594/api/locdb/',

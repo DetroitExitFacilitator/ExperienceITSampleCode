@@ -36,7 +36,6 @@
 
         function loadData(data) {
             $("#resultsTable tr:gt(0)").remove();
-            //alert("AAAA" + JSON.stringify(data, null, "  "))
             var list = data.results;
             for (var i = 0; i < list.length; i++) {
                 var item = list[i];
@@ -48,13 +47,15 @@
 
         /* Step 5.50: Define the loadRemoteLOC function that will pass the search information to an ajax call.  Upon returning, the loadData will be called with the returned data. */
         function loadRemoteLOC() {
-            /*  Step 5.51: Using JQuery get the value in the search box */
+            /*  Step 5.51: Using JQuery get the value in the search variable */
             var search = $("#searchText").val();
+            //QLNOTE: We should probably cover $.ajax in a prior HW assignement.
             /*  Step 5.60: Using JQuery ajax, call the url 'http://www.loc.gov/pictures/search/' */
-            /*  Step: Pass the following in the data element:
+            /*  Step 5.61: Pass the following in the data element:
                  { fo: 'json', at: 'results', query: search }
             */
-            /* Step 5.61: in order for this to work, you will need to update the controller file: LOCController.cs */
+             //QLNOTE: Below NOT needed for this controller since we are calling an external site.
+            /* REMOVE THIS: Step 5.61: in order for this to work, you will need to update the controller file: LOCController.cs */
             $.ajax({
                 type: 'get',
                 url: 'http://www.loc.gov/pictures/search/',

@@ -44,7 +44,8 @@
         // Step 6.40: Define the loadSimpleEndpoint function that will pass the search information to an ajax call.  Upon returning, the loadData will be called with the returned data.
         function loadSimpleEndpoint() {
             var search = $("#searchText").val();
-            /*  Step: Using JQuery ajax, call the url  'http://localhost:29594/api/loc/' */
+            /* Step 6.45: Using JQuery ajax, call the url  'http://localhost:29594/api/loc/' */
+            /* Step 6.50: In order for this to work, you will need to update the controller file: LOCController.cs */
             $.ajax({
                 type: 'get',
                 url: 'http://localhost:29594/api/loc/',
