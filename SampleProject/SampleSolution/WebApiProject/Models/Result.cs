@@ -6,6 +6,17 @@ using System.Runtime.Serialization;
 
 namespace WebApiProject.Models
 {
+    /* Step: This object is used to define a Result object*/
+    // Step 6.551: Create a public class called Links.
+    // Step 6.552: Add an attribute called DataContract to the class.
+    //    This is used so we can rename properties.
+    // Step 6.553: add public properties called:
+    //    named id, title, createdOn, image, links, ignore.
+    //    for image, define it as an Image object
+    //    for links, define it as an Links object.
+    // Step 6.554: Using attributes, give the property createdOn and external name of created_published_date
+    //QLNOTE:  This should be covered in a prior HW?
+
     [DataContract]
     public class Result
     {

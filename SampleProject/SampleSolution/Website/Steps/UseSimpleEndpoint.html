@@ -10,8 +10,7 @@
 <body>
 
     <input id="searchText" type="text" size="100" value="Migrant Mother. Dorothea Lange" />
-    <!-- Step 6.20: tie into the onclick event, and call the function "loadSimpleEndpoint" -->
-    <br /><button onclick="loadSimpleEndpoint()">Search Remote</button>
+    <br /><button onclick="loadRemoteData()">Search Remote</button>
 
     <table border="1" id="resultsTable">
         <tr>
@@ -38,13 +37,12 @@
                 addRowToTable(item);
             }
         }
-        // Step 6.30: Call the loadSimpleEndpoint function (in order to initialize when the page loads)
-        loadSimpleEndpoint();
+        loadRemoteData();
 
-        // Step 6.40: Define the loadSimpleEndpoint function that will pass the search information to an ajax call.  Upon returning, the loadData will be called with the returned data.
-        function loadSimpleEndpoint() {
+        function loadRemoteData() {
             var search = $("#searchText").val();
-            /*  Step: Using JQuery ajax, call the url  'http://localhost:29594/api/loc/' */
+            /* Step 6.45: Using JQuery ajax, call the url  'http://localhost:29594/api/loc/' */
+            /* Step 6.50: In order for this to work, you will need to update the controller file: LOCController.cs */
             $.ajax({
                 type: 'get',
                 url: 'http://localhost:29594/api/loc/',

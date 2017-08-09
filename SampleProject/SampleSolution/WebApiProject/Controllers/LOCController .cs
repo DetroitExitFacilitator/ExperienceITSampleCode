@@ -13,8 +13,11 @@ namespace WebApiProject.Controllers
     /* Step: This class is used to define what happens when the '/loc' endpoint is called*/
     public class LOCController : ApiController
     {
-        /* Step 6.50: Need to create  object LOCRequest, as well as:
-         LOCData, Result, Image, and Links*/
+        /* Step 6.51: You will need to create object LOCRequest (Step 6.52), as well as:
+         Image(Step 6.53), 
+         Links (Step 6.54),
+         Result (Step 6.55),
+         LOCData (Step 6.56)*/
         [HttpGet]
         public LOCData GetFromQueryString([FromUri] LOCRequest location)
         {
