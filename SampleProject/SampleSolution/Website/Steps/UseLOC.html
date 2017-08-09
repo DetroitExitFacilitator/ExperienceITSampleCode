@@ -14,8 +14,8 @@
     <!-- Step 5.20:  Give the input box a default value of "Migrant Mother. Dorothea Lange" -->
     <input id="searchText" type="text" size="100" value="Migrant Mother. Dorothea Lange" />
     <br />(Also Try "Detroit Campus Martius")
-    <!-- Step 5.30: tie into the onclick event, and call the function "loadRemoteLOC" -->
-    <br /><button onclick="loadRemoteLOC()">Search Remote</button>
+    <!-- Step 5.30: tie into the onclick event, and call the function "loadRemoteData" -->
+    <br /><button onclick="loadRemoteData()">Search Remote</button>
 
     <table border="1" id="resultsTable">
         <tr>
@@ -42,11 +42,11 @@
                 addRowToTable(item);
             }
         }
-        /* Step 5.40: Call the loadRemoteLOC function (in order to initialize when the page loads)  */
-        loadRemoteLOC();
+        /* Step 5.40: Call the loadRemoteData function (in order to initialize when the page loads)  */
+        loadRemoteData();
 
-        /* Step 5.50: Define the loadRemoteLOC function that will pass the search information to an ajax call.  Upon returning, the loadData will be called with the returned data. */
-        function loadRemoteLOC() {
+        /* Step 5.50: Define the loadRemoteData function that will pass the search information to an ajax call.  Upon returning, the loadData will be called with the returned data. */
+        function loadRemoteData() {
             /*  Step 5.51: Using JQuery get the value in the search variable */
             var search = $("#searchText").val();
             //QLNOTE: We should probably cover $.ajax in a prior HW assignement.
