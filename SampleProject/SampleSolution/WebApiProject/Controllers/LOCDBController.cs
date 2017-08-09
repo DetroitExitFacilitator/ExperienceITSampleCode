@@ -21,13 +21,16 @@ namespace WebApiProject.Controllers
         [HttpGet]
         public LOCData GetFromQueryString([FromUri] LOCRequest location)
         {
-            return Get(location.query);
+            var data = new LOCData();
+            data.results = Reader(location.query);
+            return data;
         }
 
         // Step: Return a list of Results, from the "ResultsTable" SQL table.
+        // Step 7.50: Create a static method, named Reader, that takes a string named search, and returns an List of type Result 
         private static List<Result> Reader(string search)
         {
-            // Step 7.50: return the connection string define in the web.config file, under "ExperienceITDatabaseConnectionString"
+            // Step 7.51: return the connection string define in the web.config file, under "ExperienceITDatabaseConnectionString"
             string _connectionString = ConfigurationManager.ConnectionStrings["ExperienceITDatabaseConnectionString"].ConnectionString;
             var results = new List<Result>();
 
@@ -48,9 +51,12 @@ namespace WebApiProject.Controllers
                         // Step 7.110: Read one row at a time, from the table.
                         while (reader.Read())
                         {
+                            // Step 7.111: read the id, title value from the reader, and set an id, and title variable.
+
                             var id = (int)reader["id"];
 
                             var title = (string)reader["title"];
+                            // Step 7.112:  If the title does not contain the search, continue
                             if (!title.Contains(search)) continue;
                             string createdOn = (string)reader["createDate"];
                             // Step 7.120: Based on the returned data, create a Results object.
@@ -61,13 +67,13 @@ namespace WebApiProject.Controllers
                                 createdOn = createdOn,
                                 image = new Image()
                                 {
-                                    full = "//www.loc.gov/pictures/cdn/service/pnp/cph/3c20000/3c23000/3c23000/3c23096_150px.jpg",
+                                    full = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=" + title,
                                     square = "https://dummyimage.com/75x75/cccccc/000000.jpg&text=" + title
                                 },
                                 links = new Links()
                                 {
-                                    item = "//www.loc.gov/pictures/item/99403554/",
-                                    resource = "//www.loc.gov/pictures/item/99403554/resource/"
+                                    item = "https://dummyimage.com/75x75/aaaaaa/000000.jpg&text=link:" + title,
+                                    resource = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=link:" + title
                                 }
                             };
                             results.Add(result);
@@ -76,28 +82,6 @@ namespace WebApiProject.Controllers
                 }
             }
             return results;
-        }
-
-        // GET api/loc
-        private LOCData Get(string search)
-        {
-            var data = new LOCData();
-            var results = Reader(search);
-            foreach (var item in results)
-            {
-                item.image = new Image()
-                {
-                    full = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=" + item.title,
-                    square = "https://dummyimage.com/75x75/cccccc/000000.jpg&text=" + item.title
-                };
-                item.links = new Links()
-                {
-                    item = "https://dummyimage.com/75x75/aaaaaa/000000.jpg&text=link:" + item.title,
-                    resource = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=link:" + item.title
-                };
-            }
-            data.results = results;
-            return data;
         }
 
         //// GET api/loc/5
