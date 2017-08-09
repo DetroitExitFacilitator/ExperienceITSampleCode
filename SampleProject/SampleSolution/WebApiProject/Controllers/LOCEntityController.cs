@@ -29,9 +29,10 @@ namespace WebApiProject.Controllers
         // Step NA: Returns the LOCData, based on iterating the results from the ResultsTables
         private LOCData GetV1(string search)
         {
+            // Step: Return data form using the ResultsTables property
             var resultsTable = ExperienceITDB.ResultsTables.AsEnumerable();
+            // Step: Filter based on the title containing the search value
             var dbresults = resultsTable.Where(x => x.Title.Contains(search));
-
             var data = new LOCData();
             var results = new List<Result>();
             foreach (var dbItem in dbresults)
@@ -57,13 +58,15 @@ namespace WebApiProject.Controllers
         // Step 8.60: Returns the LOCData, based on using LINQ
         private LOCData Get(string search)
         {
-            var resultsTable = ExperienceITDB.ResultsTables.AsEnumerable();
-            var dbresults = resultsTable.Where(x => x.Title.Contains(search));
-
+            //QLNOTE:TODO More details needed here.  Also, cover in prior HW?
+            // Step: This will create a variable db that contains the entity information.
             using (var db = new ExperienceITDatabaseEntities())
             {
-                var query = db.ResultsTables
-                        .Where(x => x.Title.Contains(search))
+                // Step 8.61: Iterate the ResultsTables.  
+                var resultList = db.ResultsTables
+                       // Step 8.62: Filter based on the title containing the search value  
+                       .Where(x => x.Title.Contains(search))
+                        // Step 8.63: transform the data from ResultsTable  to Result
                         .Select<ResultsTable, Result>
                         (t => new Result
                         {
@@ -79,9 +82,11 @@ namespace WebApiProject.Controllers
                                 item = "https://dummyimage.com/75x75/aaaaaa/000000.jpg&text=link:" + t.Title,
                                 resource = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=link:" + t.Title
                             }
-                        });
+                        })
+                        .ToList(); // Converts to a list
 
-                var data = new LOCData() { results = query.ToList<Result>() };
+                // Step: This will return the resultList, and place it in an LOCData object.
+                var data = new LOCData() { results = resultList };
                 return data;
             }
         }
