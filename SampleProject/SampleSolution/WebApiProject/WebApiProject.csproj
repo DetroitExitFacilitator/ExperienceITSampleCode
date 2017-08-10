@@ -200,7 +200,6 @@
     <Compile Include="Controllers\LOCEntityController.cs" />
     <Compile Include="Controllers\LOCDBController.cs" />
     <Compile Include="Controllers\LOCController .cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DBContext\AdventureWorksEntitiyDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

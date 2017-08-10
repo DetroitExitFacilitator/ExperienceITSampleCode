@@ -13,11 +13,11 @@
 <body>
 
     <input id="searchText" type="text" size="100" value="-not used-" />
+    <!-- Step 4.25: Have the buttons' onclick event call "testRemote" -->
     <br /><button onclick="testRemote()">Search Remote</button>
 
-
     <!-- Step 4.30: Give the table the id  "resultsTable" -->
-    <table border="1" >
+    <table border="1">
         <tr>
             <th>date</th>
             <th>title</th>
@@ -100,25 +100,21 @@
         function addRowToTable(item) {
             var row = $("<tr />")
             $("#resultsTable").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
-            /* Step 4.50: Add the items created publish date  */
-            // Student: Insert code here.
-
+            /* Step 4.50: add items to the table row, add item.created_published_date*/
             /* Step 4.60: Add a link that ties to the links.item, and has the title of item.title. */
-            // Student: Insert code here.
-
             /* Step 4.70: Add another link, that ties to the  links.resource, and has the an image displayed.  Uses the image.square object. */
-            // Student: Insert code here.
+            /* Step 4.75: append this row, to the selector resultsTable  */
         }
 
         /* Step 4.80: Create a function loadData that takes 'data' as the input.  This will iterate through all the results data, and add rows to the table. */
-        //Student: Insert Code here
-
-            /* Step 4.90: Using JQuery, clear out all the tr tags.  */
-            // Student Insert code here.
+        //Student: Update Code here
+        function XXX() {
+            //Student: Uncomment Code here
+            // $("#resultsTable tr:gt(0)").remove();  // This will use the #resultsTable, then the 'tr' tag, and remove all rows greater than 1
 
             /* Step 4.100: iterate through all the items in the results list, and call addRowToTable for each item.  This will basically add one row of data at a time to the table.*/
             //Student: Insert code here
-
+        }
         /* Step 4.110: Load the sample data*/
         // Student: Insert code here.
     </script>

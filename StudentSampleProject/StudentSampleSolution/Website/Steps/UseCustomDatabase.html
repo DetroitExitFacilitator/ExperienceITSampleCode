@@ -10,9 +10,10 @@
 <body>
 
     <!-- Step 7.20: Default value = "lam" -->
-    <!-- Student: Insert Code Here -->
+    <!-- Student: Update Code Here -->
+    <input id="searchText" type="text" size="100" />
     <!-- Step 7.30: tie into the onclick event, and call the function "loadDatabaseData" -->
-    <!-- Student: Insert Code Here -->
+    <br /><button onclick="loadRemoteData()">Search Database</button>
 
     <table border="1" id="resultsTable">
         <tr>
@@ -39,8 +40,27 @@
                 addRowToTable(item);
             }
         }
-        // Step 7.40: Implement & Call the loadDatabaseData function (in order to initialize when the page loads)
-        // Student: Insert Code Here -- >
+        function loadRemoteData() {
+            var search = $("#searchText").val();
+            /* Step 7.50: Using JQuery ajax, call the url  'http://localhost:29594/api/locdb/' */
+            /* Step 7.51: In order for this to work, you will need to update the controller file: LOCDBController.cs */
+            $.ajax({
+                type: 'get',
+                url: 'XXX',             //Student: Insert Code Here
+                dataType: 'json',
+                data: {
+                    fo: 'json',
+                    at: 'results',
+                    query: search
+                },
+                success: function (response) {
+                    loadData(response);
+                },
+                error: function (errorObject) {
+                    alert("error: " + errorObject.responseText)
+                }
+            })
+        }
     </script>
 </body>
 </html>

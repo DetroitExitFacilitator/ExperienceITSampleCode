@@ -10,8 +10,8 @@
 <body>
     <!-- Step 9.20:  Default value of "Road" -->
     <!-- Student: Insert Code Here -->
-    <!-- Step 9.30: tie into the onclick event, and call the function "loadAWDatabaseUsingEntity" -->
-    <!-- Student: Insert Code Here -->
+    <input id="searchText" type="text" size="100" />
+    <br /><button onclick="loadRemoteData()">Search Database</button>
 
     <table border="1" id="resultsTable">
         <tr>
@@ -39,9 +39,29 @@
                 addRowToTable(item);
             }
         }
-        // Step 9.40: Call & Implement the loadAWDatabaseUsingEntity function (in order to initialize when the page loads)
-        // Student: Insert Code Here
+        loadRemoteData();
 
+        function loadRemoteData() {
+            var search = $("#searchText").val();
+            /* Step 9.50: Using JQuery ajax, call the url  'http://localhost:29594/api/AWEntity/' */
+            /* Step 9.51: In order for this to work, you will need to update the controller file: AWEntityController.cs */
+            $.ajax({
+                type: 'get',
+                url: 'XXX',
+                dataType: 'json',
+                data: {
+                    fo: 'json',
+                    at: 'results',
+                    query: search
+                },
+                success: function (response) {
+                    loadData(response);
+                },
+                error: function (errorObject) {
+                    alert("error: " + errorObject.responseText)
+                }
+            })
+        }
     </script>
 </body>
 </html>

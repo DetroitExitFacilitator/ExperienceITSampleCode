@@ -25,46 +25,33 @@ namespace WebApiProject.Controllers
 
         // Step 8.50: Get the entity
         //Student: Insert Code Here.
+        protected readonly ExperienceITDatabaseEntities ExperienceITDB = null;
 
         // Step 8.60 Returns the LOCData, based on using LINQ
         private LOCData Get(string search)
         {
-            //Student: InsertCode here and remove NotImplementedException
-            throw new NotImplementedException();
+            // This will create a variable db that contains the entity information.
+            using (var db = new ExperienceITDatabaseEntities())
+            {
+                // Step 8.61: Iterate the ResultsTables.  
+                var resultList = db.ResultsTables
+                  // Step 8.62: Filter based on the title containing the search value  
+                  //Student: Update Code Here.
+                  .Where(x => true)
+                    // Step 8.63: transform the data from ResultsTable  to Result
+                    .Select<ResultsTable, Result>
+                    (t => new Result
+                    {
+                        //Student: Insert Code Here.
+
+                    })
+                    .ToList(); // Converts to a list
+
+                // This will return the resultList, and place it in an LOCData object.
+                var data = new LOCData() { results = resultList };
+                throw new NotImplementedException();
+                return null;
+            }
         }
-
-
-
-        //// GET api/loc/5
-        //[Route("api/locaaa/{search}")]
-        //[HttpGet]
-        //public LOCData Getaaa(string search)
-        //{
-        //    return Get(search);
-        //}
-
-        //// GET api/loc/5
-        //[Route("api/loc/{fo}/{at}/{query}")]
-        //[HttpGet]
-        //public LOCData Getbbb(string fo, string at, string query)
-        //{
-        //    return Get(query);
-        //}
-
-
-        //// POST api/values
-        //public void Post([FromBody]string value)
-        //{
-        //}
-
-        //// PUT api/values/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE api/values/5
-        //public void Delete(int id)
-        //{
-        //}
     }
 }
