@@ -13,8 +13,7 @@
 
     <!-- Step 5.20:  Give the input box a default value of "Migrant Mother. Dorothea Lange" -->
     <!-- Student: Insert Code Here -->
-
-    <!-- Step 5.30: tie into the onclick event, and call the function "loadRemoteLOC" -->
+    <!-- Step 5.30: tie into the onclick event, and call the function "loadRemoteData" -->
     <!-- Student: Insert Code Here -->
 
     <table border="1" id="resultsTable">
@@ -36,40 +35,38 @@
 
         function loadData(data) {
             $("#resultsTable tr:gt(0)").remove();
-            //alert("AAAA" + JSON.stringify(data, null, "  "))
             var list = data.results;
             for (var i = 0; i < list.length; i++) {
                 var item = list[i];
                 addRowToTable(item);
             }
         }
-        /* Step 5.40: Call the loadRemoteLOC function (in order to initialize when the page loads)  */
-        // Student: Insert Code Here
+        /* Step 5.40: Call the loadRemoteData function (in order to initialize when the page loads)  */
+        loadRemoteData();
 
-        /* Step 5.50: Define the loadRemoteLOC function that will pass the search information to an ajax call.  Upon returning, the loadData will be called with the returned data. */
-        function loadRemoteLOC() {
+        /* Step 5.50: Define the loadRemoteData function that will pass the search information to an ajax call.  Upon returning, the loadData will be called with the returned data. */
+        function loadRemoteData() {
             /*  Step 5.51: Using JQuery get the value in the search box */
             var search = // Student: Insert Code Here
-            /*  Step 5.60: Using JQuery ajax, call the url 'http://www.loc.gov/pictures/search/' */
-            /*  Step: Pass the following in the data element:
-                 { fo: 'json', at: 'results', query: search }
-            */
-            /* Step 5.61: Call the url and pass the data element to get results */
-            $.ajax({
-                type: 'get',
-                url: // Student: Insert Code Here
-                dataType: 'jsonp',
-                data: {
-                    // Student: Insert Code Here
-                },
-                /*  Step 5.62: add a 'success' function that gets passed in the response data, then calls loadData with the value */
-                success: function (response) {
-                    // Student: Insert Code Here
-                },
-                error: function (errorObject) {
-                    alert("error: " + errorObject.responseText)
-                }
-            })
+                /*  Step 5.60: Using JQuery ajax, call the url 'http://www.loc.gov/pictures/search/' */
+                /*  Step 5.61: Pass the following in the data element:
+                     { fo: 'json', at: 'results', query: search }
+                */
+                $.ajax({
+                    type: 'get',                    // This specifies that we are using the "GET" REST method
+                    url: "XXX", // Student: Insert Code Here
+                    dataType: 'jsonp',
+                    data: {
+                        // Student: Insert Code Here
+                    },
+                    /*  Step 5.62: add a 'success' function that gets passed in the response data, then calls loadData with the value */
+                    success: function (response) {
+                        // Student: Insert Code Here
+                    },
+                    error: function (errorObject) {
+                        alert("error: " + errorObject.responseText)
+                    }
+                })
         }
     </script>
 </body>

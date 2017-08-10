@@ -10,11 +10,15 @@ using System.Web.Http.Cors;
 
 namespace WebApiProject.Controllers
 {
-    /*This class is used to define what happens when the '/loc' endpoint is called*/
+    /* This class is used to define what happens when the '/loc' endpoint is called*/
     public class LOCController : ApiController
     {
-        /* Step 6.50: Need to create  object LOCRequest, as well as:
-         LOCData, Result, Image, and Links*/
+        /* Step 6.51: You will need to create object LOCRequest (Step 6.52), as well as:
+         Image(Step 6.53), 
+         Links (Step 6.54),
+         Result (Step 6.55),
+         LOCData (Step 6.56)
+         */
 
         [HttpGet]
         public LOCData GetFromQueryString([FromUri] LOCRequest location)
@@ -24,32 +28,39 @@ namespace WebApiProject.Controllers
             var data = new LOCData();
             data.results = new List<Result>
             {
-          // Step 6.70: Return the Result object, with sample data 
-               new Result()
+                // Step 6.70: Return the Result object, with sample data 
+                // use the following value for the Image: 
+                //       full ="//www.loc.gov/pictures/cdn/service/pnp/cph/3c30000/3c34000/3c34900/3c34960_150px.jpg",
+                //       square = "//cdn.loc.gov/service/pnp/cph/3c30000/3c34000/3c34900/3c34960_75x75px.jpg",
+                // use the following value for the Links: 
+                // item = "//www.loc.gov/pictures/item/2004675446/",
+                // resource ="//www.loc.gov/pictures/item/2004675446/resource/"
+                new Result()
                 {
-          //Student: Insert your code here
+                    //Student: Insert your code here
 
-          // Step 6.80: Return the Image object, with sample data 
-                   image = new Image()
+                    // Step 6.80: Return the Image object, with sample data 
+                    image = new Image()
                     {
-                       //Student: Insert your code here
+                        //Student: Insert your code here
                     },
-          // Step 6.90: Return the Links object, with sample data 
-                   links = new Links()
+                    // Step 6.90: Return the Links object, with sample data 
+                    links = new Links()
                     {
-                       //Student: Insert your code here
+                        //Student: Insert your code here
                     }
                 },
            // Step 6.100: Create a second Result object.  
               new Result()
-                {
+              {
                   //Student: Insert your code here
-                }
+              }
             };
-            //Student: return Data 
-            throw new NotImplementedException();
+            return data;
+
         }
 
+        // More example of other types of REST endpoints
         //// GET api/loc/5
         //[Route("api/locaaa/{search}")]
         //[HttpGet]

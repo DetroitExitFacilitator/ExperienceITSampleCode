@@ -18,20 +18,25 @@ namespace WebApiProject.Controllers
      * It uses ADO.Net to get the data from the database to the internal objects. */
     public class LOCDBController : ApiController
     {
-        [HttpGet]
         public LOCData GetFromQueryString([FromUri] LOCRequest location)
         {
-            return Get(location.query);
+            var data = new LOCData();
+            // data.results = Reader(location.query);
+            return data;
         }
 
-        // Step: Return a list of Results, from the "ResultsTable" SQL table.
-        private static List<Result> Reader(string search)
+        // Return a list of Results, from the "ResultsTable" SQL table.
+        // Step 7.50: Create a static method, named Reader, that takes a string named search, and returns an List of type Result 
+        // Student: Update Code Here
+        private static List<Result> XXX(string YYY)
         {
-            // Step 7.50: return the connection string define in the web.config file, under "ExperienceITDatabaseConnectionString"
+            // Step 7.51: return the connection string define in the web.config file, under "ExperienceITDatabaseConnectionString"
             // Student: Insert Code Here
+            var results = new List<Result>();
 
             // Step 7.60: Specify the SQL statement to use.  Get all data from the "ResultsTable" 
-            // Student: Insert Code Here
+            // Student: Update Code Here
+            string commandText = "XXX";
 
             // Step 7.70: Create a connection object. */
             // Student: Insert Code Here
@@ -48,64 +53,30 @@ namespace WebApiProject.Controllers
             // Step 7.110: Read one row at a time, from the table.
             // Student: Insert Code Here
 
-            // Step 7.120: Based on the returned data, create a Results object.
+            // Step 7.111: read the id, title value from the reader, and set an id, and title variable.
             // Student: Insert Code Here
 
+            // Step 7.120: Based on the returned data, create a Results object. "TTT" should be replace with the title.
+            // Student: Update Code Here
+            var result = new Result()
+            {
+            //    id = 999,
+            //    title = "XXX",
+            //    createdOn = "XXX",
+            //    image = new Image()
+            //    {
+            //        full = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=" + "TTT",
+            //        square = "https://dummyimage.com/75x75/cccccc/000000.jpg&text=" + "TTT"
+            //    },
+            //    links = new Links()
+            //    {
+            //        item = "https://dummyimage.com/75x75/aaaaaa/000000.jpg&text=link:" + "TTT",
+            //        resource = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=link:" + "TTT"
+            //    }
+            };
+            // Step 7.121: Add the result to the results object.
             throw new NotImplementedException();
         }
 
-        // GET api/loc
-        private LOCData Get(string search)
-        {
-            var data = new LOCData();
-            var results = Reader(search);
-            foreach (var item in results)
-            {
-                item.image = new Image()
-                {
-                    full = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=" + item.title,
-                    square = "https://dummyimage.com/75x75/cccccc/000000.jpg&text=" + item.title
-                };
-                item.links = new Links()
-                {
-                    item = "https://dummyimage.com/75x75/aaaaaa/000000.jpg&text=link:" + item.title,
-                    resource = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=link:" + item.title
-                };
-            }
-            data.results = results;
-            return data;
-        }
-
-        //// GET api/loc/5
-        //[Route("api/locaaa/{search}")]
-        //[HttpGet]
-        //public LOCData Getaaa(string search)
-        //{
-        //    return Get(search);
-        //}
-
-        //// GET api/loc/5
-        //[Route("api/loc/{fo}/{at}/{query}")]
-        //[HttpGet]
-        //public LOCData Getbbb(string fo, string at, string query)
-        //{
-        //    return Get(query);
-        //}
-
-
-        //// POST api/values
-        //public void Post([FromBody]string value)
-        //{
-        //}
-
-        //// PUT api/values/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE api/values/5
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

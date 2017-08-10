@@ -12,7 +12,7 @@ using System.Web;
 
 namespace WebApiProject.Controllers
 {
-    /* Step: This class is used to define what happens when the '/AWEntity' endpoint is called.  
+    /* This class is used to define what happens when the '/AWEntity' endpoint is called.  
      * In this case, it queries the "AdventureWorks" database, and gets all the results from a table. 
      * */
     public class AWEntityController : ApiController
@@ -48,8 +48,8 @@ namespace WebApiProject.Controllers
             // Step 9.64: Interate through all the filteredFilled items using the dbItems name.
             foreach (var dbItem in filteredFilled)
             {
-                var item = new Result();
                 // Step 9.65: For each item, create a Result object, call it item.
+                var item = new Result();
                 // Step 9.66: Populate the title with the dbItems' Name
                 item.title = dbItem.Name;
                 // Step 9.67: Populate the createdOn with the dbItems' ModifiedDate (need to convert it to a string)
@@ -72,36 +72,5 @@ namespace WebApiProject.Controllers
             data.results = results;
             return data;
         }
-        //// GET api/loc/5
-        //[Route("api/locaaa/{search}")]
-        //[HttpGet]
-        //public LOCData Getaaa(string search)
-        //{
-        //    return Get(search);
-        //}
-
-        //// GET api/loc/5
-        //[Route("api/loc/{fo}/{at}/{query}")]
-        //[HttpGet]
-        //public LOCData Getbbb(string fo, string at, string query)
-        //{
-        //    return Get(query);
-        //}
-
-
-        //// POST api/values
-        //public void Post([FromBody]string value)
-        //{
-        //}
-
-        //// PUT api/values/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE api/values/5
-        //public void Delete(int id)
-        //{
-        //}
     }
 }
