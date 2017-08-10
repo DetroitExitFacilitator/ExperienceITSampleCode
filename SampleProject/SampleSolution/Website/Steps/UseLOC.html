@@ -49,15 +49,12 @@
         function loadRemoteData() {
             /*  Step 5.51: Using JQuery get the value in the search variable */
             var search = $("#searchText").val();
-            //QLNOTE: We should probably cover $.ajax in a prior HW assignement.
             /*  Step 5.60: Using JQuery ajax, call the url 'http://www.loc.gov/pictures/search/' */
             /*  Step 5.61: Pass the following in the data element:
                  { fo: 'json', at: 'results', query: search }
             */
-             //QLNOTE: Below NOT needed for this controller since we are calling an external site.
-            /* REMOVE THIS: Step 5.61: in order for this to work, you will need to update the controller file: LOCController.cs */
             $.ajax({
-                type: 'get',
+                type: 'get',                    // This specifies that we are using the "GET" REST method
                 url: 'http://www.loc.gov/pictures/search/',
                 dataType: 'jsonp',
                 data: {

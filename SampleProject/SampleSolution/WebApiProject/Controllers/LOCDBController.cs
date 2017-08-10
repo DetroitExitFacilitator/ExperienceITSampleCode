@@ -26,7 +26,7 @@ namespace WebApiProject.Controllers
             return data;
         }
 
-        // Step: Return a list of Results, from the "ResultsTable" SQL table.
+        // Return a list of Results, from the "ResultsTable" SQL table.
         // Step 7.50: Create a static method, named Reader, that takes a string named search, and returns an List of type Result 
         private static List<Result> Reader(string search)
         {
@@ -59,7 +59,7 @@ namespace WebApiProject.Controllers
                             // Step 7.112:  If the title does not contain the search, continue
                             if (!title.Contains(search)) continue;
                             string createdOn = (string)reader["createDate"];
-                            // Step 7.120: Based on the returned data, create a Results object.
+                            // Step 7.120: Based on the returned data, create a Results object. "TTT" should be replace with the title.
                             var result = new Result()
                             {
                                 id = id,
@@ -76,6 +76,7 @@ namespace WebApiProject.Controllers
                                     resource = "https://dummyimage.com/275x275/aaaaaa/000000.jpg&text=link:" + title
                                 }
                             };
+                            // Step 7.121: Add the result to the results object.
                             results.Add(result);
                         }
                     }
@@ -84,36 +85,5 @@ namespace WebApiProject.Controllers
             return results;
         }
 
-        //// GET api/loc/5
-        //[Route("api/locaaa/{search}")]
-        //[HttpGet]
-        //public LOCData Getaaa(string search)
-        //{
-        //    return Get(search);
-        //}
-
-        //// GET api/loc/5
-        //[Route("api/loc/{fo}/{at}/{query}")]
-        //[HttpGet]
-        //public LOCData Getbbb(string fo, string at, string query)
-        //{
-        //    return Get(query);
-        //}
-
-
-        //// POST api/values
-        //public void Post([FromBody]string value)
-        //{
-        //}
-
-        //// PUT api/values/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE api/values/5
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

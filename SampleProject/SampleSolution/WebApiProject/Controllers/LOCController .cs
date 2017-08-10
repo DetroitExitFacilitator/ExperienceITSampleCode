@@ -10,14 +10,15 @@ using System.Web.Http.Cors;
 
 namespace WebApiProject.Controllers
 {
-    /* Step: This class is used to define what happens when the '/loc' endpoint is called*/
+    /* This class is used to define what happens when the '/loc' endpoint is called*/
     public class LOCController : ApiController
     {
         /* Step 6.51: You will need to create object LOCRequest (Step 6.52), as well as:
          Image(Step 6.53), 
          Links (Step 6.54),
          Result (Step 6.55),
-         LOCData (Step 6.56)*/
+         LOCData (Step 6.56)
+         */
         [HttpGet]
         public LOCData GetFromQueryString([FromUri] LOCRequest location)
         {
@@ -27,7 +28,13 @@ namespace WebApiProject.Controllers
             data.results = new List<Result>
             {
           // Step 6.70: Return the Result object, with sample data 
-               new Result()
+            // use the following value for the Image: 
+           //       full ="//www.loc.gov/pictures/cdn/service/pnp/cph/3c30000/3c34000/3c34900/3c34960_150px.jpg",
+           //       square = "//cdn.loc.gov/service/pnp/cph/3c30000/3c34000/3c34900/3c34960_75x75px.jpg",
+            // use the following value for the Links: 
+                        // item = "//www.loc.gov/pictures/item/2004675446/",
+                        // resource ="//www.loc.gov/pictures/item/2004675446/resource/"
+                                      new Result()
                 {
                     title = "SAMPLE: Michigan, Detroit, Campus Martius",
                     createdOn = "[between 1920 and 1940]",
@@ -45,7 +52,9 @@ namespace WebApiProject.Controllers
                     }
                 },
            // Step 6.100: Create a second Result object.  
-              new Result()
+
+           
+                        new Result()
                 {
                     title = "SAMPLE: [Shubert's Detroit Opera House, Campus Martins, Detroit, Michigan]",
                     createdOn =  "1929.",
@@ -64,6 +73,7 @@ namespace WebApiProject.Controllers
             return data;
         }
 
+        // More example of other types of REST endpoints
         //// GET api/loc/5
         //[Route("api/locaaa/{search}")]
         //[HttpGet]
