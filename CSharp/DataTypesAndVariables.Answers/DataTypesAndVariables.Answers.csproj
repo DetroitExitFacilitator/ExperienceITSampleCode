@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessModifiers.cs" />
     <Compile Include="AccessModifiersAnswers.cs" />
     <Compile Include="Classes.cs" />
     <Compile Include="Collections.cs" />

@@ -7,7 +7,6 @@ namespace DataTypesAndVariables.Excercise1
     {
         public static void Main(string[] args)
         {
-            method();
             //To use this class Click the solution Explorer tab.
             //To start this class right click the project and select properties.
             //Select the application option and set the start up to object to this class example found here.
