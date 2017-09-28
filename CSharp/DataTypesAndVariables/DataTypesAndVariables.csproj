@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>DataTypesAndVariables.Excercise1.NumbersProblem</StartupObject>
+    <StartupObject>DataTypesAndVariables.Exercise1.NumbersProblem</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,15 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Excercise1\AccessModifiers.cs" />
-    <Compile Include="Excercise1\Classes.cs" />
-    <Compile Include="Excercise1\Collections.cs" />
-    <Compile Include="Excercise1\IfAndSwitch.cs" />
-    <Compile Include="Excercise1\Linq.cs" />
-    <Compile Include="Excercise1\Loops.cs" />
-    <Compile Include="Excercise1\NumbersProblem.cs" />
-    <Compile Include="Excercise1\Operators.cs" />
-    <Compile Include="Excercise1\StringProblem.cs" />
+    <Compile Include="Exercise1\AccessModifiers.cs" />
+    <Compile Include="Exercise1\Classes.cs" />
+    <Compile Include="Exercise1\Collections.cs" />
+    <Compile Include="Exercise1\IfAndSwitch.cs" />
+    <Compile Include="Exercise1\Linq.cs" />
+    <Compile Include="Exercise1\Loops.cs" />
+    <Compile Include="Exercise1\NumbersProblem.cs" />
+    <Compile Include="Exercise1\Operators.cs" />
+    <Compile Include="Exercise1\StringProblem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

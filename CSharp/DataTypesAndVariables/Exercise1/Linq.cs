@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace DataTypesAndVariables.Excercise1
+namespace DataTypesAndVariables.Exercise1
 {
     public class Linq
     {

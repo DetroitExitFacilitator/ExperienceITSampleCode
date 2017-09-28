@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System;﻿
-namespace DataTypesAndVariables.Excercise1
+namespace DataTypesAndVariables.Exercise1
 {
     public class Operators
     {
