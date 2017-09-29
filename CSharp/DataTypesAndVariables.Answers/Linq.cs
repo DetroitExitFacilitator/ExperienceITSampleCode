@@ -8,10 +8,10 @@ namespace DataTypesAndVariables.Answers
     {
         public static void Main(string[] args)
         {
-            //use this list for the linq examples (except for Select and SelectMany, that will use a different list)
+            //Use this list for the linq examples (except for Select and SelectMany, that will use a different list)
             var list = new List<string> { "Aang", "Megaman", "Homer", "Rick", "Summer", "Bob", "Louise", "Archer", "Stan", "Rodger", "Sozin" };
 
-            //where
+            //"where"
             //Write a program that uses the linq method Where to find all the names that start with capital S and print the names
             var namesThatStartWithS = list.Where(n => n.StartsWith("S")); //or n[0] == 'S'
             foreach (var name in namesThatStartWithS)
@@ -21,9 +21,9 @@ namespace DataTypesAndVariables.Answers
             //Write a program that uses the linq method Where to find all names that contain the letter 'w' lowercase and print the number of names
             var namesThatContainW = list.Where(n => n.Contains('w'));
             Console.WriteLine($"Names that contain the letter 'w': {namesThatContainW.Count()}");
-            
 
-            //first
+
+            //"first"
             //Write a program that uses the linq method First to print the first name that has the letter 'c' lowercase in it
             var firstNameWithC = list.First(n => n.Contains('c'));
             Console.WriteLine($"First name that contains the letter 'c' is: {firstNameWithC}");
@@ -37,7 +37,7 @@ namespace DataTypesAndVariables.Answers
             var firstOrDefaultNameWith15Letters = list.FirstOrDefault(n => n.Length >= 15);
             Console.WriteLine($"Name with 15 letters or more: {firstOrDefaultNameWith15Letters}");
 
-            //single
+            //"single"
             //Write a program that uses the linq method Single to print the name that contains the letter 'z' lowercase
             var onlyNameWithZ = list.Single(n => n.Contains('z'));
             Console.WriteLine($"The only name with the letter z is: {onlyNameWithZ}");
@@ -50,7 +50,6 @@ namespace DataTypesAndVariables.Answers
             //Write a program that uses the linq method SingleOrDefault to print the name that contains the letter 's' lowercase
             var onlyNameWithS = list.SingleOrDefault(n => n.Contains('s'));
             Console.WriteLine($"The only name that contains the letter 's': {onlyNameWithS}");
-
 
             //Select and SelectMany
             var classRoom = LoadClassroom();
@@ -68,6 +67,7 @@ namespace DataTypesAndVariables.Answers
             {
                 Console.Write($"{className} ");
             }
+            Console.ReadKey();
         }
 
         private static List<Student> LoadClassroom()
