@@ -40,7 +40,7 @@ namespace DataTypesAndVariables.Answers
 
         public static string DetermineLetterGrade(int gradePoint)
         {
-            if (gradePoint < 61)
+            if (gradePoint >= 0 && gradePoint <= 60)
                 return "F";
             else if (gradePoint < 71)
                 return "D";
