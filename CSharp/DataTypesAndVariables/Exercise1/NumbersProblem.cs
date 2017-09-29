@@ -5,8 +5,6 @@ namespace DataTypesAndVariables.Exercise1
 {
     public class NumbersProblem
     {
-
-
         public static void Main()
         {
             //Create a program that will do the following and write all results to the console 
