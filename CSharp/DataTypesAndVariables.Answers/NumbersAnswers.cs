@@ -4,7 +4,23 @@ namespace DataTypesAndVariables.Answers
 {
     public class NumbersAnswers
     {
-        public void IntegerAnswers()
+        public static void Main()
+        {
+            //Create a program that will do the following and write all results to the console 
+            //Make sure to write an understandable message with each result so you can easily read it at the end
+            //EX If adding two numbers together, display to the console a message like 
+            //"Adding (the first number you chose) + (the second number) = (the result)"
+
+            IntegerAnswers();
+            DoubleAnswers();
+            DoubleMeetsIntegerAnswer();
+            DecimalMeetsIntegerAnswer();
+            BooleanOperatorsAnswer();
+            ObjectAnswers();
+            Console.ReadLine();
+        }
+
+        public static void IntegerAnswers()
         {
             //Add two ints 
             int add1 = 1;
@@ -12,13 +28,13 @@ namespace DataTypesAndVariables.Answers
             int additionResult = add1 + add2;
             Console.WriteLine($"Adding {add1} + {add2} = {additionResult}");
 
-            //Subtract to ints
+            //Subtract two ints
             int subtract1 = 5;
             int subtract2 = 3;
             int subtractionResult = subtract1 - subtract2;
             Console.WriteLine($"Subtracting {subtract1} - {subtract2} = {subtractionResult}");
 
-            //multiply two ints 
+            //Multiply two ints 
             int multiply1 = 3;
             int multiply2 = 4;
             int multiplicationResult = multiply1 * multiply2;
@@ -30,34 +46,34 @@ namespace DataTypesAndVariables.Answers
             int divisionResult = divide1 / divide2;
             Console.WriteLine($"Dividing {divide1} / {divide2} = {divisionResult}");
 
-            //Mod two ints.
+            //Mod two ints
             int mod1 = 11;
             int mod2 = 3;
             int modulusResult = mod1 % mod2;
             Console.WriteLine($"Modulus of {mod1} % {mod2} = {modulusResult}");
 
-            //print the minvalue of an int using the min value method
+            //Print the minvalue of an int using the min value method
             int intMinValue = int.MinValue;
             Console.WriteLine($"The minimum value of an int is {intMinValue}");
 
-            //print the maxvalue of an int using the max value method
+            //Print the maxvalue of an int using the max value method
             int intMaxValue = int.MaxValue;
             Console.WriteLine($"The maximum value of an int is {intMaxValue}");
 
-            // add max value of int to max value of int and print the result as int
+            //Add max value of int to max value of int and print the result as int
             int maxVal1 = int.MaxValue;
             int maxVal2 = int.MaxValue;
             int maxResult = maxVal1 + maxVal2;
 
             Console.WriteLine($"Adding int max values {maxVal1} + {maxVal2} = {maxResult}");
 
-            //make a variable with keyword type int and then make a string variable and call the type of the int variable you made
+            //Make a variable with keyword type int and then make a string variable and call the type of the int variable you made
             int number = 3;
             string type = number.GetType().ToString();
             Console.WriteLine($"The type of keyword int is {type}");
         }
 
-        public void DoubleAnswers()
+        public static void DoubleAnswers()
         {
             //Add two doubles together
             double doubleAdd1 = 20.239023;
@@ -65,13 +81,13 @@ namespace DataTypesAndVariables.Answers
             double doubleAddResult = doubleAdd1 + doubleAdd2;
             Console.WriteLine($"Adding two doubles {doubleAdd1} + {doubleAdd2} = {doubleAddResult}");
 
-            //Subtract to doubles 
+            //Subtract two doubles 
             double dSubtract1 = 390.2222;
             double dSubtract2 = 239.39023;
             double dSubtractionResult = dSubtract1 = dSubtract2;
             Console.WriteLine($"Subtracting two doubles {dSubtract1} - {dSubtract2} = {dSubtractionResult}");
 
-            //multiply two doubles 
+            //Multiply two doubles 
             double dMultiply1 = 3.39023;
             double dMultiply2 = 9.38232222;
             double dMultiplacationResult = dMultiply1 * dMultiply2;
@@ -83,43 +99,43 @@ namespace DataTypesAndVariables.Answers
             double dDivisionResult = dDivide1 / dDivide2;
             Console.WriteLine($"Dividing two doubles {dDivide1} / {dDivide2} = {dDivisionResult}");
 
-            //Mod two doulbes.
+            //Mod two doubles
             double dMod1 = 48.202;
             double dMod2 = 8.22222222;
             double dModulusResult = dMod1 / dMod2;
             Console.WriteLine($"Modulus of two doubles {dMod1} % {dMod2} = {dModulusResult}");
 
             double doublePrecision = 2902.380320;
-            //print the results of doublePrecision displaying two decimal places
+            //Print the results of doublePrecision displaying two decimal places
             Console.WriteLine($"{doublePrecision:2d}");
 
-            //print the results of doublePrecision diplaying 4 decimal places
+            //Print the results of doublePrecision diplaying 4 decimal places
             Console.WriteLine($"{doublePrecision:4d}");
 
-            //print the max value of a double
+            //Print the max value of a double
             double dMaxValue = double.MaxValue;
             Console.WriteLine($"Max value of a double is {dMaxValue}");
 
-            //print the min value of a double
+            //Print the min value of a double
             double dMinValue = double.MinValue;
             Console.WriteLine($"Min value of a double is {dMinValue}");
 
-            // add max value of double to max value of double and print the result as int
+            //Add max value of double to max value of double and print the result as int
             double maxVal1 = double.MaxValue;
             double maxVal2 = double.MaxValue;
             double maxResult = maxVal1 + maxVal2;
 
             Console.WriteLine($"Adding double max values {maxVal1} + {maxVal2} = {maxResult}");
 
-            //make a variable with keyword type int and then make a string variable and call the type of the int variable you made
+            //Make a variable with keyword type int and then make a string variable and call the type of the int variable you made
             double number = 3;
             string type = number.GetType().ToString();
             Console.WriteLine($"The type of keyword double is {type}");
         }
 
-        public void DoubleMeetsIntegerAnswer()
+        public static void DoubleMeetsIntegerAnswer()
         {
-            //divide an int value by a double and capture the value and then print the result and then the results type;
+            //Divide an int value by a double and capture the value and then print the result and then the results type;
             int integerValue = 6;
             double doubleValue = 2.999;
             var result = integerValue / doubleValue;
@@ -129,9 +145,9 @@ namespace DataTypesAndVariables.Answers
             Console.WriteLine($"The resulting type of the integer and double division is {resultType}.");
         }
 
-        public void DecimalMeetsIntegerAnswer()
+        public static void DecimalMeetsIntegerAnswer()
         {
-            // Create an integer number and decimal number and divide the integer by the decimal
+            //Create an integer number and decimal number and divide the integer by the decimal
             //Display the results and the results type
             int integerValue = 9;
             decimal decimalValue = 3.0000m;
@@ -142,7 +158,7 @@ namespace DataTypesAndVariables.Answers
             Console.WriteLine($"The resulting type of the integer and decimal division is {resultType}.");
         }
 
-        public void BooleanOperatorsAnswer()
+        public static void BooleanOperatorsAnswer()
         {
             //What would be the result of true && false, true && true, false && true, and false && false
             bool andResult1 = true && true;
@@ -174,16 +190,14 @@ namespace DataTypesAndVariables.Answers
             Console.WriteLine($"The result of false and true is {notResult3}");
             Console.WriteLine($"The result of false and false is {notResult4}");
 
-            //make a variable with keyword type bool and then make a string variable and call the type of the int variable you made
+            //Make a variable with keyword type bool and then make a string variable and call the type of the int variable you made
             bool value = true;
             string type = value.GetType().ToString();
             Console.WriteLine($"The type of keyword bool is {type}");
         }
 
-        public void ObjectAnswers()
+        public static void ObjectAnswers()
         {
-            //OBJect class problems will neede to be created.
-
             //Create two objects
             object obj1 = new object();
             object obj2 = new object();
@@ -209,30 +223,5 @@ namespace DataTypesAndVariables.Answers
             Console.WriteLine($"The  type of Obj4 is {objectType}");
         }
 
-        public void Answers()
-        {
-            // Create a program that will do the following and write all results to the console 
-            //Make sure to write an understandable message with each result so you can easily read it at the end
-            //EX If adding two numbers together, display to the console a message like 
-            //"Adding (the first number you chose) + (the second number) = (the result)"
-            
-            IntegerAnswers();
-
-            DoubleAnswers();
-
-            DoubleMeetsIntegerAnswer();
-
-            //todo: decimal manipulation 
-
-            DecimalMeetsIntegerAnswer();
-
-            
-            // same as double and decimal
-
-
-            BooleanOperatorsAnswer();
-
-            ObjectAnswers();
-        }
     }
 }
