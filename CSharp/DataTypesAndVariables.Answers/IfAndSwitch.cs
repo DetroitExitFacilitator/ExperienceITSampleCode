@@ -13,9 +13,9 @@ namespace DataTypesAndVariables.Answers
             //the letter grade A, B, C, D, or F
             //0-60 receives a F
             //61-70 receives a D
-            //71-80 recieves a C
-            //81-90 recieves a B
-            //91-100 recieves an A
+            //71-80 receives a C
+            //81-90 receives a B
+            //91-100 receives an A
             //If they provide anything else, return ERR
             Console.WriteLine("Please enter an integer grade point between 0 and 100");
             string response = Console.ReadLine();
@@ -35,20 +35,20 @@ namespace DataTypesAndVariables.Answers
             string letterResponse = Console.ReadLine();
             int numericGrade = SwitchLetterGrade(letterResponse);
             Console.WriteLine($"Your numeric grade is {numericGrade}");
-
+            Console.ReadKey();
         }
 
         public static string DetermineLetterGrade(int gradePoint)
         {
             if (gradePoint >= 0 && gradePoint <= 60)
                 return "F";
-            else if (gradePoint < 71)
+            else if (gradePoint <= 70)
                 return "D";
-            else if (gradePoint < 81)
+            else if (gradePoint <= 80)
                 return "C";
-            else if (gradePoint < 91)
+            else if (gradePoint <= 90)
                 return "B";
-            else if (gradePoint > 90 && gradePoint < 101)
+            else if (gradePoint > 90 && gradePoint <= 100)
                 return "A";
             else
                 return "ERR";

@@ -13,9 +13,9 @@ namespace DataTypesAndVariables.Exercise1
             //the letter grade A, B, C, D, or F
             //0-60 receives a F
             //61-70 receives a D
-            //71-80 recieves a C
-            //81-90 recieves a B
-            //91-100 recieves an A
+            //71-80 receives a C
+            //81-90 receives a B
+            //91-100 receives an A
             //If they provide anything else, return ERR
 
             //Console.WriteLine($"Your letter grade is {letterGrade}");
@@ -29,6 +29,7 @@ namespace DataTypesAndVariables.Exercise1
             //anything else return -1
 
             //Console.WriteLine($"Your numeric grade is {numericGrade}");
+            Console.ReadKey();
         }
     }
 }
